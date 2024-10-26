@@ -31,3 +31,7 @@ user_pref("privacy.resistFingerprinting", false);
 user_pref("browser.search.suggest.enabled", true);
 user_pref("browser.urlbar.suggest.searches", true);
 user_pref("browser.startup.page", 1);
+user_pref("browser.download.autohideButton", true);
+user_pref("browser.download.always_ask_before_handling_new_types", true);
+//user_pref("browser.download.folderList", 2); // set this pref for the download dir to actually be changed from the default
+user_pref("browser.download.dir", "C:\Users\adit9\AppData\Local\Temp");
