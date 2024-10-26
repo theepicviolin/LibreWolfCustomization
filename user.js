@@ -22,3 +22,12 @@ user_pref("widget.gtk.rounded-bottom-corners.enabled", true);
 
 // Who is bogus? (fixes Sidebery tab dragging on Linux)
 user_pref("widget.gtk.ignore-bogus-leave-notify", 1);
+
+
+/***** CUSTOM EDITS *****/
+user_pref("network.trr.mode", 3);
+user_pref("network.trr.uri", "https://dns.quad9.net/dns-query");
+user_pref("privacy.resistFingerprinting", false);
+user_pref("browser.search.suggest.enabled", true);
+user_pref("browser.urlbar.suggest.searches", true);
+user_pref("browser.startup.page", 1);
