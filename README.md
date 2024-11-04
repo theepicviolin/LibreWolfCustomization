@@ -1,2 +1,2 @@
 # shimmer
-firefox userchrome for sidebery or not
+pleasant firefox userchrome with sidebery support [beta] 
