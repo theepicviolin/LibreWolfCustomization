@@ -1,0 +1,688 @@
+/* browser toolbox prompt hack - set devtools.debugger.prompt-connection to false */
+
+
+/*? shimmer variables */
+:root {
+  /*? urlbar border radius */
+  --shimmer-urlbar-rounding: 16px;
+  --shimmer-urlbar-inner-rounding: calc(var(--shimmer-urlbar-rounding) * .75);
+
+  /*? max tab width */
+  --shimmer-tab-max-width: 165px;
+  /*? min tab width */
+  --shimmer-tab-min-width: 135px;
+
+  --shimmer-tab-height: 32px;
+  --shimmer-titlebar-height: calc(var(--shimmer-tab-height) + 6px);
+  --shimmer-tab-border-radius: 16px;
+  --shimmer-browser-border-radius: 20px;
+  
+  --shimmer-win-ctr-buttons-width: calc(46px * 3);
+}
+
+/*? overwritten variables */
+:root {
+  --arrowpanel-menuitem-margin-inline: 5px !important;
+  --arrowpanel-header-min-height: calc(calc(var(--arrowpanel-header-back-icon-full-width) + (var(--panel-separator-margin-horizontal) * 2)) * 0.5) !important;
+  --arrowpanel-menuitem-padding: 4px 8px !important;
+  --arrowpanel-border-radius: 12px !important;
+  --arrowpanel-menuitem-border-radius: calc(var(--arrowpanel-border-radius) / 1.65) !important;
+  --var-tab-min-height: 10px !important;
+  /* --tab-border-radius: var(--shimmer-tab-border-radius) !important; */
+  /*? disable opacity change when tabbed out */
+  --inactive-titlebar-opacity: 1 !important;
+  --splitter-width: 8px !important;
+}
+
+/*? customize context menu */
+/* #context-back, */
+/* #context-bookmarklink, */
+/* #context-bookmarkpage, */
+/* #context-forward, */
+/* #context-inspect, */
+#context-inspect-a11y,
+/* #context-navigation, */
+/* #context-openlink, */
+/* #context-openlinkintab, */
+/* #context-openlinkinusercontext-menu, */
+/* #context-openlinkprivate, */
+#context-pocket,
+/* #context-reload, */
+#context-savelink,
+#context-savelinktopocket,
+/* #context-savepage, */
+/* #context-searchselect, */
+/* #context-selectall, */
+/* #context-sendlinktodevice, */
+/* #context-sendpagetodevice, */
+/* #context-sep-navigation, */
+/* #context-sep-open, */
+/* #context-sep-selectall, */
+#context-sep-sendlinktodevice,
+#context-sep-sendpagetodevice,
+/* #context-sep-viewbgimage, */
+#context-sep-viewsource,
+/* #context-stop, */
+/* #context-viewbgimage, */
+/* #context-viewinfo, */
+#context-viewpartialsource-selection,
+#context-viewsource,
+/* #inspect-separator, */
+#screenshots_mozilla_org_create-screenshot {
+  display: none !important;
+}
+
+/*? slim scrollbars everywhear!!!! */
+* {
+  scrollbar-width: thin !important;
+}
+
+/*! ====== titlebar ====== */
+
+.toolbarbutton-animatable-box>image {
+  /*? change reload button animation length */
+  animation-duration: 0.7s !important;
+  animation-timing-function: ease-in-out !important;
+}
+
+/*? change bookmark star button to yellow_ when starred */
+#star-button[starred="true"] {
+  fill: #f7e617 !important;
+  stroke: #000 !important;
+  stroke-width: 2px !important;
+  filter: drop-shadow(0px 0px 0.5px #000) !important;
+}
+
+/*? taller navbar */
+#navigator-toolbox, #nav-bar {
+  min-height: 50px !important;
+}
+#TabsToolbar {
+  height: 100% !important;
+}
+
+
+/*? make extensions buttons reach the entire height of navbar */
+#nav-bar-customization-target toolbarbutton {
+  height: 100% !important;
+}
+
+#urlbar {
+  margin: 0 !important;
+}
+
+/*? move the window control buttons to the same row as urlbar */
+@media (-moz-bool-pref: "shimmer.nightly") {
+  /* order or row-reverse, order used */
+  /* FOR FIREFOX NIGHTLY */
+  #main-window[titlepreface="​"] #navigator-toolbox {
+    display: flex !important;
+    flex-direction: row !important;
+  }
+  #main-window[titlepreface="​"] #nav-bar {
+    flex: 1 !important;
+    order: 1 !important;
+  }
+  #main-window[titlepreface="​"] #TabsToolbar, #titlebar {
+    order: 2 !important;
+  }
+}
+/* FOR FIREFOX RELEASE */
+#main-window[titlepreface=""] #navigator-toolbox {
+  display: flex !important;
+  flex-direction: column !important;
+}
+#main-window[titlepreface="​"] #navigator-toolbox {
+  display: flex !important;
+  flex-direction: row !important;
+}
+#main-window[titlepreface="​"] #nav-bar {
+  order: 1 !important;
+  flex: 1 !important;
+}
+#main-window[titlepreface="​"] #titlebar {
+  order: 2 !important;
+}
+
+/*? make the window grabbable at the top, but not the window control buttons */
+#main-window[titlepreface="​"] #nav-bar {
+  border-top: 1px solid rgba(0, 0, 0, 0) !important;
+}
+#main-window[titlepreface=""] .toolbar-items {
+  margin-top: 1px !important;
+}
+
+/*? hide native tabs */
+#main-window[titlepreface="​"] #TabsToolbar > .toolbar-items {
+  display: none !important;
+}
+
+/*? hack for removing wide spacing around window control buttons */
+#main-window[titlepreface="​"] #TabsToolbar {
+  max-width: var(--shimmer-win-ctr-buttons-width) !important;
+}
+
+/*? make navigation buttons white_ when sidebar open */
+#main-window[titlepreface="​"] #navigator-toolbox {
+  background: var(--toolbar-bgcolor) !important;
+}
+
+/*! === urlbar === */
+
+/*? rounded url bar and box */
+#urlbar-background {
+  background: var(--toolbar-field-background-color) !important;
+  /* background: color-mix(in srgb, var(--toolbar-bgcolor) 90%, rgba(0, 0, 0, 255)) !important; */
+  border-radius: var(--shimmer-urlbar-rounding) !important;
+  transition: all 0.1s linear !important;
+}
+
+/*? rounded buttons inside urlbar (firefox logo on about pages, padlock, trans, etc.) */
+#identity-box > box, #tracking-protection-icon-container, #page-action-buttons > *, #urlbar-revert-button-container, #urlbar-searchmode-switcher {
+  border-radius: var(--shimmer-urlbar-rounding) !important;
+}
+
+/*? needed for popup transition to work */
+#urlbar {
+  margin-top: 0 !important;
+  transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+}
+
+/*? make the background of extended urlbar move down and BROKEN drop a blur behing */
+#urlbar[breakout-extend] {
+  width: 100vw !important;
+  position: absolute !important;
+  margin-top: 10vh !important;
+  /* margin-left: 8vw !important; */
+  z-index: 9999 !important;
+  transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+  max-width: 70vw !important;
+  /* backdrop-filter: blur(8px) !important; */
+  background: rgba(0, 0, 0, 0) !important;
+  /* border-radius: 20px; */
+}
+
+#urlbar[breakout-extend] #urlbar-background {
+  background: var(--toolbar-field-focus-background-color) !important;
+  transition: all 0.1s linear !important;
+}
+
+/*? urlbox backdrop */
+#urlbar[breakout-extend]::before{
+  content: '' !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  position: fixed !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  top: 0 !important;
+  left: 0 !important;
+  background: color-mix(in srgb, var(--toolbar-field-focus-background-color) 65%, rgba(0, 0, 0, 0)) !important;
+}
+
+
+@media (min-width: 800px) {
+  /*? urlbar bigger text */
+  #urlbar[breakout-extend] #urlbar-input {
+    font-size: 1.5rem !important;
+  }
+
+  /*? taller urlbar for bigger text when extended */
+  #urlbar[breakout-extend] .urlbar-input-container {
+    height: 48px !important;
+  }
+}
+
+/*? centered text when urlbar not in use */
+#urlbar:not(:is([breakout-extend])) #urlbar-input {
+  text-align: center !important;
+}
+
+/*? center the text further */
+#urlbar-input {
+  margin-right: 40px !important /* width of identity box */;
+}
+
+/*? hide search one offs */
+@media not (-moz-bool-pref: "shimmer.show-search-one-offs") {
+  .search-one-offs {
+    display: none !important;
+  }
+}
+
+/*? fix for floating urlbar */
+@media (-moz-bool-pref: "shimmer.nightly") { 
+  #urlbar:not([breakout-extend]) {
+    top: auto !important;
+  }
+}
+
+/*? hide 1px line below urlbar */
+.urlbarView-body-inner {
+  border-top: none !important;
+}
+
+/*? hide border below top bar */
+#navigator-toolbox {
+  border: 0px !important;
+}
+
+/*? make rounded borders have nice color */
+#browser {
+  background: var(--toolbar-bgcolor) !important;
+}
+
+/*? experimental: broken at the moment */
+@media (-moz-bool-pref: "shimmer.rounded-nav-buttons") { 
+
+  #nav-bar {
+    border-top-right-radius: 16px !important;
+  }
+
+  #navigator-toolbox {
+    /* background: var(--toolbar-bgcolor) !important; */
+    background: linear-gradient(0deg, #fff 0%, #fff 50%, var(--toolbar-field-background-color) 50%, var(--toolbar-field-background-color) 50%) !important; 
+  }
+
+  #titlebar {
+    /* change */
+    background: var(--toolbar-field-background-color) !important;
+    border-bottom-left-radius: 16px !important;
+    overflow: hidden !important;
+  }
+
+}
+
+/* TITLEBAR IS REMOVED IN 132 OR 133, HAVE TO CHANGE THIS */
+#toolbar-menubar {
+  display: none !important;
+}
+.titlebar-spacer {
+  display: none !important;
+}
+#TabsToolbar {
+  flex: 0 !important;
+}
+
+/*! === findbar === */
+
+findbar {
+  border: 0 !important;
+  /*? relative for margins */
+  position: relative !important;
+  border-radius: 16px !important;
+  bottom: 46px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: 560px !important;
+  /*? fix for relative positioning */
+  margin-top: -40px !important;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+}
+
+findbar[hidden]{
+  margin-bottom: 0 !important;
+  opacity: 0 !important;
+  background: rgba(0, 0, 0, 0) !important;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+}
+
+findbar:not([hidden]) {
+  opacity: 1 !important;
+  background: var(--lwt-accent-color) !important;
+}
+
+/*? change text to icons for smaller findbar */
+.findbar-container checkbox::after {
+  height: 16px;
+  font-size: 14px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  -moz-context-properties: fill;
+  fill: currentColor;
+  color: inherit;
+}
+.findbar-highlight::after {
+  content: '';
+  background: url(./assets/icons/hl.svg) no-repeat;
+  width: 18px;
+  background-position-y: -1px;
+}
+.findbar-match-diacritics::after {
+  content: 'ąâ';
+  font-weight: 600;
+}
+.findbar-entire-word::after {
+  content: '';
+  background: url(./assets/icons/word.svg) no-repeat;
+  width: 20px;
+  background-position-y: -2px;
+}
+.findbar-case-sensitive::after {
+  content: 'Aa';
+  font-weight: 600;
+}
+
+/*? hide all text for findbar checkboxes */
+.findbar-container checkbox > .checkbox-label-box {
+  display: none !important;
+}
+
+.findbar-textbox {
+  border-radius: 11px !important;
+  font-family: monospace !important;
+  padding: 5px 8px !important;
+}
+
+/*TODO fix fading animation  still not working */
+.findbar-closebutton:hover {
+  opacity: 1 !important;
+  background: var(--toolbarbutton-hover-background) !important;
+}
+.findbar-closebutton {
+  opacity: 1 !important;
+  background: var(--lwt-accent-color) !important;
+}
+
+
+
+/*? hide private browsing indicator so it won't block access to the close button */
+.private-browsing-indicator-with-label {
+  display: none !important;
+}
+
+#PanelUI-menu-button {
+  display: flex !important;
+}
+
+@media (max-width: 620px) {
+  #PanelUI-menu-button {
+    display: none !important;
+  }
+
+  #unified-extensions-button {
+    margin-right: 12px !important;
+  }
+}
+
+/*? make the go button bigger in urlbar */
+.urlbar-go-button {
+  height: 100% !important;
+  width: auto !important;
+  padding: 1.5% !important;
+  border-radius: var(--shimmer-urlbar-inner-rounding) !important;
+}
+
+
+/*? rounded results */
+.urlbarView-row {
+  border-radius: var(--shimmer-urlbar-inner-rounding) !important;
+}
+/*? for some reason the results get clipped so adding some padding */
+.urlbarView {
+  padding: 0 5px !important;
+}
+
+.urlbarView-row:hover {
+  background: var(--urlbar-box-hover-bgcolor) !important;
+}
+
+/*? small separator between results and search bar */
+/* .urlbarView-body-outer {
+  border-top: 1px rgba(0, 0, 0, 0.15) solid !important;
+} */
+.urlbarView-body-outer::before {
+  content: '';
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 1px;
+  background: #aaa;
+  opacity: 0.2;
+  display: block;
+  mix-blend-mode: difference;
+}
+.urlbarView-body-inner {
+  border: 0 !important;
+}
+
+/*? increase padding in urlbar */
+#urlbar-results {
+  padding-bottom: 8px !important;
+}
+
+/*? seamless transition */
+/* #sidebar-box {
+  box-shadow: -10px -100px 0px 100px var(--toolbar-bgcolor),
+  0 0px 20px 15px var(--lwt-accent-color);
+} */
+/*? hide the hiding box shadow */
+/* #navigator-toolbox {
+  z-index: 2 !important;
+} */
+
+/*? add margin to left of browser when sidebar hidden */
+#sidebar-box[hidden="true"] ~ #tabbrowser-tabpanels {
+  padding-left: 3px !important;
+}
+
+#tabbrowser-tabpanels, #sidebar-box {
+  background: rgba(0, 0, 0, 0) !important;
+}
+
+/*! === floating statuspanel === */
+
+/*? move statuspanel */
+#statuspanel {
+  bottom: 14px !important;
+  left: 11px !important;
+}
+#statuspanel[mirror] {
+  left: auto !important;
+  right: 18px !important;
+}
+
+/*? round statuspanel */
+#statuspanel, #statuspanel-label {
+  border-radius: 8px !important;
+}
+
+/*? border and alternative statuspanel padding */
+#statuspanel-label {
+  padding: 3px 8px !important;
+  border: solid 1px var(--button-background-color-active) !important;
+}
+
+/*? color the statuspanel */
+#statuspanel-label {
+  background: var(--lwt-accent-color);
+  color: var(--lwt-text-color);
+}
+
+/*! === tabs === */
+
+#TabsToolbar, .toolbar-items, #TabsToolbar-customization-target, #tabbrowser-tabs, #tabbrowser-arrowscrollbox {
+  height: var(--shimmer-titlebar-height);
+}
+
+/*? tab on titlebar that's not pinned */
+.tabbrowser-tab[fadein]:not([pinned]) {
+  /*? min tab width */
+  min-width: var(--shimmer-tab-min-width) !important;
+  /*? max tab width */
+  max-width: var(--shimmer-tab-max-width) !important;
+}
+
+/*? make tab background round and small */
+.tab-background {
+  min-height: 0 !important;
+  border: solid 1px color-mix(in srgb, var(--tab-selected-bgcolor) 90%, #000);
+  box-shadow: 0 0 0 #fff !important;
+  /* CHANGED check overwritten vars for tab rounding */
+  border-radius: var(--shimmer-tab-border-radius) !important;
+}
+
+@media not (-moz-bool-pref: "shimmer.do-not-show-close-button-on-tab-hover") { 
+  /*? show close button on non-active tabs when hovered */
+  .tabbrowser-tab:hover .tab-close-button {
+    display: block !important;
+  }
+}
+
+/*? hide shadow on tabbrowser (overflow already indicated by arrow clickable) */
+spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
+  display: none !important;
+}
+
+/*? change tab background color */
+.tab-background {
+  background: color-mix(in srgb, var(--tab-selected-bgcolor) 20%, rgba(0, 0, 0, 0));
+} 
+
+/*? hide firefox view separator */
+#tabbrowser-tabs {
+  border: 0 !important;
+}
+
+/* unimportant i think */
+:root[lwtheme] #navigator-toolbox, :root[lwtheme] #navigator-toolox:-moz-window-inactive {
+  background: var(--lwt-accent-color) !important;
+}
+
+/*! === sidebar === */
+/*? hide header, or give good color */
+@media not (-moz-bool-pref: "shimmer.show-sidebar-header") {
+  #sidebar-header {
+    display: none !important;
+  }
+}
+#sidebar-header {
+  background: var(--lwt-accent-color) !important;
+}
+
+/*? remove ugly border below "tabs" text */
+#sidebar-header {
+  border-bottom: 0 !important;
+}
+
+#sidebar-box, #tabbrowser-tabbox {
+  margin-bottom: 8px !important;
+}
+
+#sidebar-box {
+  margin-left: 0 !important;
+  margin-right: var(--splitter-width) !important;
+}
+@media (-moz-bool-pref: "shimmer.sidebar-right-side") {
+  #sidebar-box {
+    margin-right: 0 !important;
+    margin-left: var(--splitter-width) !important;
+  }
+}
+
+#sidebar-splitter {
+  --sidebar-splitter: 8px !important;
+  border: 0 !important;
+}
+
+@media not (-moz-bool-pref: "shimmer.show-sidebar-header-close-button") {
+  #sidebar-close {
+    display: none !important;
+  }
+}
+
+#sidebar-close {
+  /* ch */
+  margin-right: 10px !important;
+}
+
+/*? rounded browser on left edge */
+#sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+  border-radius: 0;
+  border-top-left-radius: var(--shimmer-browser-border-radius) !important;
+  border-bottom-left-radius: var(--shimmer-browser-border-radius) !important;
+  overflow: hidden !important;
+}
+
+/*? rounded sidebar on right edge */
+#sidebar-box {
+  border-top-right-radius: var(--shimmer-browser-border-radius) !important;
+  border-bottom-right-radius: var(--shimmer-browser-border-radius) !important;
+  overflow: hidden !important;
+}
+
+@media (-moz-bool-pref: "shimmer.sidebar-right-side") {
+  /*? rounded browser on right edge */
+  #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+    border-radius: 0 !important;
+    border-top-right-radius: var(--shimmer-browser-border-radius) !important;
+    border-bottom-right-radius: var(--shimmer-browser-border-radius) !important;
+  }
+
+  /*? rounded sidebar on left edge */
+  #sidebar-box {
+    border-radius: 0 !important;
+    border-top-left-radius: var(--shimmer-browser-border-radius) !important;
+    border-bottom-left-radius: var(--shimmer-browser-border-radius) !important;
+  }
+}
+
+/*! === menus === */
+/*? consistent color for ctx menus */
+.menupopup-arrowscrollbox, #searchmode-switcher-popup slot[part="content"] {
+  background: var(--lwt-accent-color) !important;
+  border-radius: var(--arrowpanel-border-radius) !important;
+  border: 0 !important;
+  outline: solid 1px var(--lwt-tab-line-color) !important;
+}
+
+/*? round context menu items */
+/* --panel-background */
+menuitem, menu, .menu-iconic, #searchmode-switcher-popup tooblarbutton {
+  --panel-background: var(--lwt-accent-color) !important;
+  border-radius: var(--arrowpanel-menuitem-border-radius) !important;
+  /* margin-inline: var(--arrowpanel-menuitem-margin-inline) !important; */
+  padding: var(--arrowpanel-menuitem-padding) !important;
+}
+/*? better hover color */
+menuitem:hover, menu:hover, .menu-iconic:hover, #searchmode-switcher-popup:hover tooblarbutton {
+  background: var(--panel-item-hover-bgcolor) !important;
+}
+
+/*? fading backgrounds on buttons */
+menuitem, toolbarbutton > stack, toolbaritem, toolbarbutton, toolbarbutton > image, .urlbarView-row, menu,
+menuitem:hover, toolbarbutton:hover > stack, toolbaritem:hover, toolbarbutton:hover, toolbarbutton:hover > image, .urlbarView-row:hover, menu:hover,
+.findbar-closebutton, .findbar-closebutton:hover
+{
+  transition: background 0.075s linear, opacity 0.075s linear;
+}
+
+/*?  */
+#context-navigation menuitem {
+  padding: 2px !important;
+}
+
+/*? smaller manage extensions button */
+#unified-extensions-manage-extensions {
+  padding: 5px 8px !important;
+  margin-bottom: 5px !important;
+}
+
+/*? larger titles in panels like extensions */
+.panel-header {
+  font-size: 1.35rem !important;
+}
+
+/*? panelui smaller margin */
+.panel-subview-body {
+  margin-bottom: 5px !important;
+}
+
+.panel-subview-body {
+  padding: 5px 0 0 0 !important;
+}
+
+/* review:  todo, change, fix */
+/*TODO button transition on sidebery */
+/*TODO fix no border on sidebery side when window is a popup (e.g. steam login popup) */

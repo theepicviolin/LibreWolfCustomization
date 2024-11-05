@@ -1,0 +1,109 @@
+@font-face {
+  font-family: 'Super Glue';
+  src: url('./assets/fonts/SuperGlue.woff2') format('woff2'),
+      url('./assets/fonts/SuperGlue.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+:root {
+  --shimmer-urlbar-rounding: 100px;
+}
+
+* {
+  scrollbar-width: thin !important;
+}
+
+.activity-stream .outer-wrapper > main {
+  /* background: var(--newtab-background-color-secondary) !important; */
+  background: rgba(150, 150, 150, 0.35) !important;
+  mix-blend-mode: luminosity !important;
+  border-radius: 48px;
+  height: auto !important;
+  padding: 2rem 0 0 0 !important;
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+  min-width: 250px !important;
+}
+
+.activity-stream .outer-wrapper .logo {
+  display: none !important;
+}
+
+.activity-stream .outer-wrapper .logo-and-wordmark {
+  margin-bottom: 24px !important;
+}
+
+.activity-stream .outer-wrapper .wordmark {
+  background: none !important;
+  width: auto !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  gap: 1.5rem !important;
+}
+.activity-stream .outer-wrapper .wordmark::after {
+  content: 'firefox';
+  font-family: 'super glue';
+  color: #fff !important;
+  filter: drop-shadow(0px 0px 1.5px rgba(0, 0, 0, 0.15));
+  /* mix-blend-mode: color-burn !important; */
+  font-size: 4.25rem;
+  letter-spacing: .25rem;
+}
+.activity-stream .outer-wrapper .wordmark::before {
+  content: '';
+  background: url(./assets/icons/ff.svg);
+  background-size: 100% 100%;
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+@media only screen and (max-width: 609px) {
+  .activity-stream .outer-wrapper .wordmark::after {
+    display: none !important;
+  }
+
+  .activity-stream .outer-wrapper > main {
+    width: 95% !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
+
+  .activity-stream .outer-wrapper .wordmark::before {
+    width: 70px;
+    height: 70px;
+  }
+
+  .activity-stream .fake-textbox {
+    display: none !important;
+  }
+}
+
+.activity-stream .search-handoff-button {
+  border-radius: var(--shimmer-urlbar-rounding) !important;
+  mix-blend-mode: color-burn;
+}
+
+.activity-stream .search-inner-wrapper {
+  mix-blend-mode: color-burn !important;
+  background: transparent !important;
+}
+
+.activity-stream .wallpaper-attribution {
+  position: static !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  mix-blend-mode: luminosity;
+  color: #fff !important;
+  filter: drop-shadow(0px 0px 1.5px rgba(0, 0, 0, 0.3));
+}
+
+.activity-stream .outer-wrapper {
+  display: flex !important;
+  padding: 48px !important;
+}
