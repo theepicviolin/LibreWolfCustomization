@@ -1,4 +1,4 @@
-# shimmer - pleasant firefox userchrome with sidebery support
+# shimmer - pleasant firefox userchrome with sidebery support (v1)
 
 ## demonstration
 
@@ -43,6 +43,9 @@
  - move `userChrome.css`, `userContent.css` files and `assets` folder into the `chrome` directory
  - reopen firefox
  - done! :3
+
+## updating
+ i am expecting to make frequent chagnes to this project. check this github page once in a while and check if a new version is available. the version of your files is visible at the bottom left of the "new tab" page (implemented in v2, not published yet).
 
 ## config
  i've implemented some custom `about:config` values for you to modify. the list is small right now but i'm hoping to see some ideas and issues pop up
