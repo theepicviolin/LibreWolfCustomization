@@ -39,7 +39,8 @@
  - toggle `svg.context-properties.content.enabled` true
  - if you're using firefox nightly, type `shimmer.nightly` into the config search box, then click `+` below
  - open about:profiles, find your profile and open the root folder
- - move "chrome" folder into the directory
+ - create a `chrome` folder if nonexistent
+ - move `userChrome.css`, `userContent.css` files and `assets` folder into the `chrome` directory
  - reopen firefox
  - done! :3
 
