@@ -29,11 +29,12 @@
 
 ## installation
 
- - download code from github (green "code" button)
+ - download code from github (green "code" button) and unzip it
  - download sidebery from mozilla addons if wanted
- - go to sidebery settings, styles editor
- - paste styles from sidebery.css into the textarea
- - press f1 to open sidebery
+ - open sidebery settings, scroll to the bottom
+ - click on "import addon data"
+ - select "sidebery.json" from the downloaded archive
+ - keep the toggles at default and click "import"
  - go to about:config
  - toggle `toolkit.legacyUserProfileCustomizations.stylesheets` true
  - toggle `svg.context-properties.content.enabled` true
@@ -43,6 +44,7 @@
  - move `userChrome.css`, `userContent.css` files and `assets` folder into the `chrome` directory
  - reopen firefox
  - done! :3
+ - see "config" section of this readme for customization options
 
 ## updating
  i am expecting to make frequent chagnes to this project. check this github page once in a while and check if a new version is available. the version of your files is visible at the bottom left of the "new tab" page (implemented in v2, not published yet).
@@ -61,5 +63,5 @@
  please keep in mind that i won't always have time to fix a problem created by a new version of firefox in a day. if you'd like to create a pull request, feel free to do so. if you find any issues, please report them at the "issues" tab on github.
 
 ## ko-fi
- if you want to send me moneys  
+ if you'd like to send me moneys  
  [![KO-FI BUTTON](https://github.com/user-attachments/assets/18d7f816-f784-46b2-97b1-89173f68e227)](https://ko-fi.com/nuclearcodecat)
