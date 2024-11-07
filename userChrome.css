@@ -18,6 +18,9 @@
   --shimmer-browser-border-radius: 20px;
   
   --shimmer-win-ctr-buttons-width: calc(46px * 3);
+
+  /* could be hardcoded in some places... */
+  --shimmer-btn-anim: background 0.075s linear, opacity 0.075s linear !important;
 }
 
 /*? overwritten variables */
@@ -317,6 +320,7 @@ findbar {
   width: 560px !important;
   /*? fix for relative positioning */
   margin-top: -40px !important;
+  border: 0 !important;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 }
 
@@ -475,7 +479,7 @@ findbar:not([hidden]) {
 
 /*? move statuspanel */
 #statuspanel {
-  bottom: 14px !important;
+  bottom: 11px !important;
   left: 11px !important;
 }
 #statuspanel[mirror] {
@@ -485,7 +489,7 @@ findbar:not([hidden]) {
 
 /*? round statuspanel */
 #statuspanel, #statuspanel-label {
-  border-radius: 8px !important;
+  border-radius: 10px !important;
 }
 
 /*? border and alternative statuspanel padding */
@@ -496,15 +500,15 @@ findbar:not([hidden]) {
 
 /*? color the statuspanel */
 #statuspanel-label {
-  background: var(--lwt-accent-color);
-  color: var(--lwt-text-color);
+  background: var(--lwt-accent-color) !important;
+  color: var(--lwt-text-color) !important;
+}
+
+#statuspanel, #statuspanel[type="overLink"] {
+  transition: opacity 75ms, visibility 75ms !important;
 }
 
 /*! === tabs === */
-
-#TabsToolbar, .toolbar-items, #TabsToolbar-customization-target, #tabbrowser-tabs, #tabbrowser-arrowscrollbox {
-  height: var(--shimmer-titlebar-height);
-}
 
 /*? tab on titlebar that's not pinned */
 .tabbrowser-tab[fadein]:not([pinned]) {
@@ -523,11 +527,8 @@ findbar:not([hidden]) {
   border-radius: var(--shimmer-tab-border-radius) !important;
 }
 
-@media not (-moz-bool-pref: "shimmer.do-not-show-close-button-on-tab-hover") { 
-  /*? show close button on non-active tabs when hovered */
-  .tabbrowser-tab:hover .tab-close-button {
-    display: block !important;
-  }
+.tabbrowser-tab:hover .tab-close-button {
+  display: block !important;
 }
 
 /*? hide shadow on tabbrowser (overflow already indicated by arrow clickable) */
@@ -545,9 +546,18 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   border: 0 !important;
 }
 
-/* unimportant i think */
-:root[lwtheme] #navigator-toolbox, :root[lwtheme] #navigator-toolox:-moz-window-inactive {
+/*? don't change background behind tabs even when window inactive */
+#navigator-toolbox, #navigator-toolox:-moz-window-inactive {
   background: var(--lwt-accent-color) !important;
+}
+
+/*? rounded tab close button */
+.tab-close-button {
+  border-radius: var(--shimmer-tab-border-radius) !important;
+}
+
+.tab-close-button, .tab-close-button:hover {
+  transition: var(--shimmer-btn-anim) !important;
 }
 
 /*! === sidebar === */
@@ -655,7 +665,7 @@ menuitem, toolbarbutton > stack, toolbaritem, toolbarbutton, toolbarbutton > ima
 menuitem:hover, toolbarbutton:hover > stack, toolbaritem:hover, toolbarbutton:hover, toolbarbutton:hover > image, .urlbarView-row:hover, menu:hover,
 .findbar-closebutton, .findbar-closebutton:hover
 {
-  transition: background 0.075s linear, opacity 0.075s linear;
+  transition: var(--shimmer-btn-anim) !important;
 }
 
 /*?  */
@@ -684,5 +694,7 @@ menuitem:hover, toolbarbutton:hover > stack, toolbaritem:hover, toolbarbutton:ho
 }
 
 /* review:  todo, change, fix */
-/*TODO button transition on sidebery */
-/*TODO fix no border on sidebery side when window is a popup (e.g. steam login popup) */
+/*TODO some of the usual buttons that appear on the right-click context menu are hidden. right now you can change them at the top of `userChrome.css`. i will maybe later introduce `about:config` variables for easier customization */
+/*TODO private mode about::newtab */
+/*TODO some private mode indicator */
+/*TODO fix pinned tab  */

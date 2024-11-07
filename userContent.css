@@ -98,12 +98,29 @@
   position: static !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  mix-blend-mode: luminosity;
+  mix-blend-mode: luminosity !important;
   color: #fff !important;
-  filter: drop-shadow(0px 0px 1.5px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0px 0px 1.5px rgba(0, 0, 0, 0.3)) !important;
 }
 
 .activity-stream .outer-wrapper {
   display: flex !important;
   padding: 48px !important;
+}
+
+.activity-stream .customize-menu .close-button-wrapper::before {
+  content: 'shimmer version 2, check for updates at';
+  display: block;
+  position: absolute;
+  top: 35%;
+  font-size: 0.8rem;
+}
+
+.activity-stream .customize-menu .close-button-wrapper::after {
+  content: 'github.com/nuclearcodecat/shimmer';
+  display: block;
+  color: color-mix(in srgb, #aaa 50%, var(--lwt-sidebar-text-color) 50%);
+  position: absolute;
+  bottom: 0;
+  font-size: 0.875rem;
 }
