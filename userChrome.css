@@ -16,6 +16,7 @@
   --shimmer-titlebar-height: calc(var(--shimmer-tab-height) + 6px);
   --shimmer-tab-border-radius: 16px;
   --shimmer-browser-border-radius: 20px;
+  --shimmer-top-bottom-browser-margin: 8px;
   
   --shimmer-win-ctr-buttons-width: calc(46px * 3);
 
@@ -116,36 +117,40 @@
 
 /*? move the window control buttons to the same row as urlbar */
 @media (-moz-bool-pref: "shimmer.nightly") {
-  /* order or row-reverse, order used */
-  /* FOR FIREFOX NIGHTLY */
   #main-window[titlepreface="​"] #navigator-toolbox {
-    display: flex !important;
-    flex-direction: row !important;
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
   }
   #main-window[titlepreface="​"] #nav-bar {
-    flex: 1 !important;
-    order: 1 !important;
+    grid-area: 1 / 1 / 2 / 2 !important;
   }
-  #main-window[titlepreface="​"] #TabsToolbar, #titlebar {
-    order: 2 !important;
+  #main-window[titlepreface="​"] #TabsToolbar {
+    grid-area: 1 / 2 / 2 / 3 !important;
+  }
+
+  #main-window[titlepreface="​"] #PersonalToolbar {
+    grid-area: 2 / 1 / 3 / 3 !important;
+  }
+
+  #PersonalToolbar:not([collapsed="true"]) {
+    padding-bottom: calc(var(--shimmer-top-bottom-browser-margin) / 2) !important;
   }
 }
-/* FOR FIREFOX RELEASE */
-#main-window[titlepreface=""] #navigator-toolbox {
-  display: flex !important;
-  flex-direction: column !important;
+@media not (-moz-bool-pref: "shimmer.nightly") {
+  /* FOR FIREFOX RELEASE */
+  #main-window[titlepreface="​"] #navigator-toolbox {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+  }
+  #main-window[titlepreface="​"] #nav-bar {
+    grid-area: 1 / 1 / 2 / 2 !important;
+  }
+
+  #PersonalToolbar:not([collapsed="true"]) {
+    padding-bottom: calc(var(--shimmer-top-bottom-browser-margin) / 2) !important;
+  }
 }
-#main-window[titlepreface="​"] #navigator-toolbox {
-  display: flex !important;
-  flex-direction: row !important;
-}
-#main-window[titlepreface="​"] #nav-bar {
-  order: 1 !important;
-  flex: 1 !important;
-}
-#main-window[titlepreface="​"] #titlebar {
-  order: 2 !important;
-}
+
 
 /*? make the window grabbable at the top, but not the window control buttons */
 #main-window[titlepreface="​"] #nav-bar {
@@ -577,7 +582,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 #sidebar-box, #tabbrowser-tabbox {
-  margin-bottom: 8px !important;
+  margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
 }
 
 #sidebar-box {
