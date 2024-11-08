@@ -1,4 +1,5 @@
 # shimmer - pleasant firefox userchrome with sidebery support (v2.1)
+see the [changelog](CHANGELOG.md) for a history of changes
 
 ## demonstration
 
