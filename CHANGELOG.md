@@ -1,5 +1,8 @@
+# v2.4
+ - fixed a bug regarding tab height
+
 # v2.3
- - added a config preference `shimmer.reverse-winctr-buttons-side`, which - when toggled true - moves the window control buttons to the left side
+ - added a config preference `shimmer.reverse-winctr-buttons-side`, which - when toggled true - moves the window control buttons to the left side (#3)
 
 # v2.2
  - fixed an issue where the findbar input box would sometimes overflow (#9)

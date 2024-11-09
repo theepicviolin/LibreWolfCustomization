@@ -567,6 +567,11 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   border: 0 !important;
 }
 
+/*? tabs got taller in v2.3 lol, fix */
+#tabbrowser-tabs {
+  min-height: 0 !important;
+}
+
 /*? don't change background behind tabs even when window inactive */
 #navigator-toolbox, #navigator-toolox:-moz-window-inactive {
   background: var(--lwt-accent-color) !important;
