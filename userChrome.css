@@ -280,36 +280,11 @@
   background: var(--toolbar-bgcolor) !important;
 }
 
-/*? experimental: broken at the moment */
-@media (-moz-bool-pref: "shimmer.rounded-nav-buttons") { 
-
-  #nav-bar {
-    border-top-right-radius: 16px !important;
-  }
-
-  #navigator-toolbox {
-    /* background: var(--toolbar-bgcolor) !important; */
-    background: linear-gradient(0deg, #fff 0%, #fff 50%, var(--toolbar-field-background-color) 50%, var(--toolbar-field-background-color) 50%) !important; 
-  }
-
-  #titlebar {
-    /* change */
-    background: var(--toolbar-field-background-color) !important;
-    border-bottom-left-radius: 16px !important;
-    overflow: hidden !important;
-  }
-
-}
-
-/* TITLEBAR IS REMOVED IN 132 OR 133, HAVE TO CHANGE THIS */
 #toolbar-menubar {
   display: none !important;
 }
 .titlebar-spacer {
   display: none !important;
-}
-#TabsToolbar {
-  flex: 0 !important;
 }
 
 /*! === findbar === */
@@ -323,10 +298,14 @@ findbar {
   margin-left: auto !important;
   margin-right: auto !important;
   width: 560px !important;
+  height: 3rem !important;
+  display: flex !important;
+  align-items: center !important;
   /*? fix for relative positioning */
   margin-top: -40px !important;
   border: 0 !important;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+  overflow: hidden !important;
 }
 
 findbar[hidden]{
@@ -339,6 +318,14 @@ findbar[hidden]{
 findbar:not([hidden]) {
   opacity: 1 !important;
   background: var(--lwt-accent-color) !important;
+}
+
+.findbar-container, .findbar-container > hbox {
+  height: 100% !important;
+}
+
+.findbar-container {
+  margin-left: 7px !important;
 }
 
 /*? change text to icons for smaller findbar */
@@ -382,9 +369,9 @@ findbar:not([hidden]) {
   border-radius: 11px !important;
   font-family: monospace !important;
   padding: 5px 8px !important;
+  max-width: 215px !important;
 }
 
-/*TODO fix fading animation  still not working */
 .findbar-closebutton:hover {
   opacity: 1 !important;
   background: var(--toolbarbutton-hover-background) !important;
@@ -392,6 +379,8 @@ findbar:not([hidden]) {
 .findbar-closebutton {
   opacity: 1 !important;
   background: var(--lwt-accent-color) !important;
+  /* wasn't square for some reason */
+  width: auto !important;
 }
 
 
@@ -581,7 +570,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   border-bottom: 0 !important;
 }
 
-#sidebar-box, #tabbrowser-tabbox {
+#sidebar-box:not([hidden]), #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
   margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
 }
 
