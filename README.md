@@ -60,6 +60,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
  - `shimmer.show-sidebar-header` - toggle true to show sidebar header
  - `shimmer.show-sidebar-header-close-button` - even if you enable the header, the close button is automatically hidden. toggle this true to make it reappear
  - `shimmer.sidebar-right-side` - toggle true if you use sidebery on the right side. you have to move the sidebar first in firefox using the sidebar header, which has to be reenabled in config
+ - `shimmer.reverse-winctr-buttons-side` - toggle true to move window control buttons to the left side
    
  some of the usual buttons that appear on the right-click context menu are hidden. right now you can change them at the top of `userChrome.css`. i will maybe later introduce `about:config` variables for easier customization
 
