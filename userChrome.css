@@ -116,41 +116,68 @@
 }
 
 /*? move the window control buttons to the same row as urlbar */
-@media (-moz-bool-pref: "shimmer.nightly") {
+#main-window[titlepreface="​"] #navigator-toolbox {
+  display: grid !important;
+}
+#PersonalToolbar:not([collapsed="true"]) {
+  padding-bottom: calc(var(--shimmer-top-bottom-browser-margin) / 2) !important;
+}
+#main-window[titlepreface="​"] #PersonalToolbar {
+  grid-area: 2 / 1 / 3 / 3 !important;
+}
+@media not (-moz-bool-pref: "shimmer.reverse-winctr-buttons-side") {
   #main-window[titlepreface="​"] #navigator-toolbox {
-    display: grid !important;
     grid-template-columns: 1fr auto !important;
   }
   #main-window[titlepreface="​"] #nav-bar {
     grid-area: 1 / 1 / 2 / 2 !important;
   }
-  #main-window[titlepreface="​"] #TabsToolbar {
+
+  @media (-moz-bool-pref: "shimmer.nightly") {
+    #main-window[titlepreface="​"] #TabsToolbar {
+      grid-area: 1 / 2 / 2 / 3 !important;
+    }
+  }
+  @media not (-moz-bool-pref: "shimmer.nightly") {
+    #main-window[titlepreface="​"] #titlebar {
+      grid-area: 1 / 2 / 2 / 3 !important;
+    }
+  }
+}
+@media (-moz-bool-pref: "shimmer.reverse-winctr-buttons-side") {
+  #main-window[titlepreface="​"] #navigator-toolbox {
+    grid-template-columns: auto 1fr !important;
+  }
+
+  #main-window[titlepreface="​"] #nav-bar {
     grid-area: 1 / 2 / 2 / 3 !important;
   }
 
-  #main-window[titlepreface="​"] #PersonalToolbar {
-    grid-area: 2 / 1 / 3 / 3 !important;
+  @media (-moz-bool-pref: "shimmer.nightly") {
+    #main-window[titlepreface="​"] #TabsToolbar {
+      grid-area: 1 / 1 / 2 / 2 !important;
+    }
+  }
+  @media not (-moz-bool-pref: "shimmer.nightly") {
+    #main-window[titlepreface="​"] #titlebar {
+      grid-area: 1 / 1 / 2 / 2 !important;
+    }
   }
 
-  #PersonalToolbar:not([collapsed="true"]) {
-    padding-bottom: calc(var(--shimmer-top-bottom-browser-margin) / 2) !important;
-  }
-}
-@media not (-moz-bool-pref: "shimmer.nightly") {
-  /* FOR FIREFOX RELEASE */
-  #main-window[titlepreface="​"] #navigator-toolbox {
-    display: grid !important;
-    grid-template-columns: 1fr auto !important;
-  }
-  #main-window[titlepreface="​"] #nav-bar {
-    grid-area: 1 / 1 / 2 / 2 !important;
-  }
-
-  #PersonalToolbar:not([collapsed="true"]) {
-    padding-bottom: calc(var(--shimmer-top-bottom-browser-margin) / 2) !important;
+  #TabsToolbar {
+    flex-direction: row-reverse !important;
   }
 }
 
+/*TODO possible fix for macos icons not centered (#3) */
+.titlebar-buttonbox-container {
+  justify-content: space-evenly !important;
+  align-items: center !important;
+}
+
+.titlebar-buttonbox {
+  height: 100% !important;
+}
 
 /*? make the window grabbable at the top, but not the window control buttons */
 #main-window[titlepreface="​"] #nav-bar {
