@@ -1,3 +1,7 @@
+# v2.5
+ - revamped tab "x" button positioning
+ - new config property `shimmer.taller-tabs`, which makes the tab as tall as default firefox tabs and moves the x button to match the height (#11)
+
 # v2.4
  - fixed a bug regarding tab height
 

@@ -31,7 +31,7 @@
   --arrowpanel-menuitem-padding: 4px 8px !important;
   --arrowpanel-border-radius: 12px !important;
   --arrowpanel-menuitem-border-radius: calc(var(--arrowpanel-border-radius) / 1.65) !important;
-  --var-tab-min-height: 10px !important;
+  /* --var-tab-min-height: 10px !important; */
   /* --tab-border-radius: var(--shimmer-tab-border-radius) !important; */
   /*? disable opacity change when tabbed out */
   --inactive-titlebar-opacity: 1 !important;
@@ -174,8 +174,11 @@
   justify-content: space-evenly !important;
   align-items: center !important;
 }
-
 .titlebar-buttonbox {
+  height: 100% !important;
+  align-items: center !important;
+}
+.titlebar-button {
   height: 100% !important;
 }
 
@@ -567,9 +570,24 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   border: 0 !important;
 }
 
-/*? tabs got taller in v2.3 lol, fix */
-#tabbrowser-tabs {
-  min-height: 0 !important;
+/*? tab height and x button pos */
+@media not (-moz-bool-pref: "shimmer.taller-tabs") {
+  #tabbrowser-tabs {
+    min-height: 38px !important;
+  }
+
+  .tab-close-button {
+    margin-inline-end: -7px !important;
+  }
+}
+@media (-moz-bool-pref: "shimmer.taller-tabs") {
+  #tabbrowser-tabs {
+    min-height: 45px !important;
+  }
+
+  .tab-close-button {
+    margin-inline-end: -3px !important;
+  }
 }
 
 /*? don't change background behind tabs even when window inactive */
@@ -606,12 +624,12 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
 }
 
-#sidebar-box {
+#sidebar-box:not([hidden]) {
   margin-left: 0 !important;
   margin-right: var(--splitter-width) !important;
 }
 @media (-moz-bool-pref: "shimmer.sidebar-right-side") {
-  #sidebar-box {
+  #sidebar-box:not([hidden]) {
     margin-right: 0 !important;
     margin-left: var(--splitter-width) !important;
   }
@@ -663,6 +681,27 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
     border-bottom-left-radius: var(--shimmer-browser-border-radius) !important;
   }
 }
+
+/*? animated sidebar-box hidden animation, breaks native tabs because the sidebery titlepreface reappears when #sidebar-box display prop isn't none */
+/* #sidebar-box[hidden] {
+  visibility: hidden !important;
+  min-width: 0 !important;
+  width: 0 !important;
+  transition: width 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+  opacity: 0 !important;
+}
+#sidebar-box:not([hidden]) {
+  opacity: 1 !important;
+}
+
+#sidebar-splitter:not([state="dragging"]) ~ #tabbrowser-tabbox, #sidebar-splitter:not([state="dragging"]) ~ #sidebar-box, #sidebar-splitter[hidden] ~ #sidebar-box {
+  transition: width 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+}
+
+#sidebar-splitter[hidden] {
+  display: flex !important;
+  width: 0px !important;
+} */
 
 /*! === menus === */
 /*? consistent color for ctx menus */
