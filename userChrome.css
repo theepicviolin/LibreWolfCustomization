@@ -12,8 +12,8 @@
   /*? min tab width */
   --shimmer-tab-min-width: 135px;
 
-  --shimmer-tab-height: 32px;
-  --shimmer-titlebar-height: calc(var(--shimmer-tab-height) + 6px);
+  /* --shimmer-tab-height: 32px; */
+  /* --shimmer-titlebar-height: calc(var(--shimmer-tab-height) + 6px); */
   --shimmer-tab-border-radius: 16px;
   --shimmer-browser-border-radius: 20px;
   --shimmer-top-bottom-browser-margin: 8px;
@@ -98,8 +98,10 @@
 }
 
 /*? taller navbar */
-#navigator-toolbox, #nav-bar {
-  min-height: 50px !important;
+@media not (-moz-bool-pref: "shimmer.shorter-navbar") {
+  #navigator-toolbox, #nav-bar {
+    min-height: 50px !important;
+  }
 }
 #TabsToolbar {
   height: 100% !important;
