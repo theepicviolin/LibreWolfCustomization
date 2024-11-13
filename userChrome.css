@@ -36,6 +36,7 @@
   /*? disable opacity change when tabbed out */
   --inactive-titlebar-opacity: 1 !important;
   --splitter-width: 8px !important;
+  --panel-background: var(--lwt-accent-color) Menu;
 }
 
 /*? customize context menu */
@@ -708,7 +709,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 /*! === menus === */
 /*? consistent color for ctx menus */
 .menupopup-arrowscrollbox, #searchmode-switcher-popup slot[part="content"] {
-  background: var(--lwt-accent-color) !important;
+  /* background: var(--lwt-accent-color) var(--panel-background) !important; */
   border-radius: var(--arrowpanel-border-radius) !important;
   border: 0 !important;
   outline: solid 1px var(--lwt-tab-line-color) !important;
@@ -717,15 +718,14 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 /*? round context menu items */
 /* --panel-background */
 menuitem, menu, .menu-iconic, #searchmode-switcher-popup tooblarbutton {
-  --panel-background: var(--lwt-accent-color) !important;
   border-radius: var(--arrowpanel-menuitem-border-radius) !important;
   /* margin-inline: var(--arrowpanel-menuitem-margin-inline) !important; */
   padding: var(--arrowpanel-menuitem-padding) !important;
 }
 /*? better hover color */
-menuitem:hover, menu:hover, .menu-iconic:hover, #searchmode-switcher-popup:hover tooblarbutton {
+/* menuitem:hover, menu:hover, .menu-iconic:hover, #searchmode-switcher-popup:hover tooblarbutton {
   background: var(--panel-item-hover-bgcolor) !important;
-}
+} */
 
 /*? fading backgrounds on buttons */
 menuitem, toolbarbutton > stack, toolbaritem, toolbarbutton, toolbarbutton > image, .urlbarView-row, menu,
@@ -760,8 +760,24 @@ menuitem:hover, toolbarbutton:hover > stack, toolbaritem:hover, toolbarbutton:ho
   padding: 5px 0 0 0 !important;
 }
 
+/*! === autoscroller ===  */
+
+/* why no work */
+/* #autoscroller slot[part="content"] {
+  --panel-background: var(--lwt-accent-color) !important;
+
+  background-color: var(--panel-background) !important;
+  background-image: var(--autoscroll-background-image) !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 12px !important;
+} */
+
 /* review:  todo, change, fix */
 /*TODO some of the usual buttons that appear on the right-click context menu are hidden. right now you can change them at the top of `userChrome.css`. i will maybe later introduce `about:config` variables for easier customization */
 /*TODO private mode about::newtab */
 /*TODO some private mode indicator */
-/*TODO fix pinned tab  */
+/*TODO fix pinned tab */
+/*TODO fix #11 should be simple */
+/*TODO autoscroller styles */

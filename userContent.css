@@ -13,7 +13,7 @@
   --shimmer-urlbar-rounding: 100px;
 }
 
-* {
+*:not(.tabs-navigation) {
   scrollbar-width: thin !important;
 }
 
@@ -109,7 +109,7 @@
 }
 
 .activity-stream .customize-menu .close-button-wrapper::before {
-  content: 'shimmer version 2.6, check for updates at';
+  content: 'shimmer version 2.7, check for updates at';
   display: block;
   position: absolute;
   top: 35%;

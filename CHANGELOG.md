@@ -1,3 +1,8 @@
+# v2.7
+ - fixed transparent popups/menus in places window (#13)
+ - fixed scrollbar in devtools (#12)
+ - updated styles for autoscroller
+
 # v2.6
  - new config property `shimmer.shorter-navbar`, which makes the navbar as tall as on unmodified firefox (#11)
 
