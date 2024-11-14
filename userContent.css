@@ -13,7 +13,7 @@
   --shimmer-urlbar-rounding: 100px;
 }
 
-*:not(.tabs-navigation) {
+*:not(.tabs-menu) {
   scrollbar-width: thin !important;
 }
 
