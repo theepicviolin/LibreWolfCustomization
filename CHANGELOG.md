@@ -1,3 +1,6 @@
+# v2.8
+ - fixed transparent sidebery hidden panels popup
+
 # v2.7
  - fixed transparent popups/menus in places window (#13)
  - fixed scrollbar in devtools (#12)
