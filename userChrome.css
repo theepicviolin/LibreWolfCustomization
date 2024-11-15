@@ -17,8 +17,6 @@
   --shimmer-tab-border-radius: 16px;
   --shimmer-browser-border-radius: 20px;
   --shimmer-top-bottom-browser-margin: 8px;
-  
-  --shimmer-win-ctr-buttons-width: calc(46px * 3);
 
   /* could be hardcoded in some places... */
   --shimmer-btn-anim: background 0.075s linear, opacity 0.075s linear !important;
@@ -36,7 +34,6 @@
   /*? disable opacity change when tabbed out */
   --inactive-titlebar-opacity: 1 !important;
   --splitter-width: 8px !important;
-  --panel-background: var(--lwt-accent-color) Menu;
 }
 
 /*? customize context menu */
@@ -196,11 +193,6 @@
 /*? hide native tabs */
 #main-window[titlepreface="​"] #TabsToolbar > .toolbar-items {
   display: none !important;
-}
-
-/*? hack for removing wide spacing around window control buttons */
-#main-window[titlepreface="​"] #TabsToolbar {
-  max-width: var(--shimmer-win-ctr-buttons-width) !important;
 }
 
 /*? make navigation buttons white_ when sidebar open */
@@ -418,9 +410,13 @@ findbar:not([hidden]) {
 
 
 
-/*? hide private browsing indicator so it won't block access to the close button */
-.private-browsing-indicator-with-label {
+/*? compact private browsing indicator */
+#private-browsing-indicator-with-label > label, .private-browsing-indicator-label {
   display: none !important;
+}
+.private-browsing-indicator-icon {
+  width: 24px !important;
+  height: 24px !important;
 }
 
 #PanelUI-menu-button {
@@ -709,7 +705,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 /*! === menus === */
 /*? consistent color for ctx menus */
 .menupopup-arrowscrollbox, #searchmode-switcher-popup slot[part="content"] {
-  /* background: var(--lwt-accent-color) var(--panel-background) !important; */
+  background: var(--lwt-accent-color, var(--panel-background)) !important;
   border-radius: var(--arrowpanel-border-radius) !important;
   border: 0 !important;
   outline: solid 1px var(--lwt-tab-line-color) !important;
@@ -726,6 +722,14 @@ menuitem, menu, .menu-iconic, #searchmode-switcher-popup tooblarbutton {
 /* menuitem:hover, menu:hover, .menu-iconic:hover, #searchmode-switcher-popup:hover tooblarbutton {
   background: var(--panel-item-hover-bgcolor) !important;
 } */
+menu, menuitem {
+  &:where([_moz-menuactive]) {
+    &:not([disabled="true"]) {
+      background: color-mix(in srgb, var(--lwt-accent-color, var(--panel-background)) 85%, var(--lwt-text-color, var(--panel-color))) !important;
+    }
+    background: color-mix(in srgb, var(--lwt-accent-color, var(--panel-background)) 92.5%, var(--lwt-text-color, var(--panel-color))) !important;
+  }
+}
 
 /*? fading backgrounds on buttons */
 menuitem, toolbarbutton > stack, toolbaritem, toolbarbutton, toolbarbutton > image, .urlbarView-row, menu,
@@ -758,6 +762,10 @@ menuitem:hover, toolbarbutton:hover > stack, toolbaritem:hover, toolbarbutton:ho
 
 .panel-subview-body {
   padding: 5px 0 0 0 !important;
+}
+
+treecol {
+  transition: var(--shimmer-btn-anim) !important;
 }
 
 /*! === autoscroller ===  */

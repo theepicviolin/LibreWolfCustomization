@@ -17,27 +17,33 @@
   scrollbar-width: thin !important;
 }
 
-.activity-stream .outer-wrapper > main {
+.activity-stream .outer-wrapper > main, .showPrivate {
   /* background: var(--newtab-background-color-secondary) !important; */
   background: rgba(150, 150, 150, 0.35) !important;
-  mix-blend-mode: luminosity !important;
   border-radius: 48px;
   height: auto !important;
-  padding: 2rem 0 0 0 !important;
   margin-top: auto !important;
   margin-bottom: auto !important;
   min-width: 250px !important;
 }
+.activity-stream .outer-wrapper > main {
+  padding: 2rem 0 0 0 !important;
+  mix-blend-mode: luminosity !important;
+}
 
-.activity-stream .outer-wrapper .logo {
+.showPrivate {
+  padding: 2rem !important;
+}
+
+.activity-stream .logo, .showPrivate .logo {
   display: none !important;
 }
 
-.activity-stream .outer-wrapper .logo-and-wordmark {
+.activity-stream .logo-and-wordmark, .showPrivate .logo-and-wordmark {
   margin-bottom: 24px !important;
 }
 
-.activity-stream .outer-wrapper .wordmark {
+.activity-stream .wordmark, .showPrivate .wordmark {
   background: none !important;
   width: auto !important;
   height: auto !important;
@@ -46,7 +52,7 @@
   margin: 0 !important;
   gap: 1.5rem !important;
 }
-.activity-stream .outer-wrapper .wordmark::after {
+.activity-stream .wordmark::after, .showPrivate .wordmark::after {
   content: 'firefox';
   font-family: 'super glue';
   color: #fff !important;
@@ -55,7 +61,7 @@
   font-size: 4.25rem;
   letter-spacing: .25rem;
 }
-.activity-stream .outer-wrapper .wordmark::before {
+.activity-stream .wordmark::before, .showPrivate .wordmark::before {
   content: '';
   background: url(./assets/icons/ff.svg);
   background-size: 100% 100%;
@@ -64,34 +70,38 @@
   display: block;
 }
 @media only screen and (max-width: 609px) {
-  .activity-stream .outer-wrapper .wordmark::after {
+  .activity-stream .wordmark::after, .showPrivate .wordmark::after {
     display: none !important;
   }
 
-  .activity-stream .outer-wrapper > main {
+  .activity-stream .outer-wrapper > main, .showPrivate {
     width: 95% !important;
     margin-right: auto !important;
     margin-left: auto !important;
   }
 
-  .activity-stream .outer-wrapper .wordmark::before {
+  .activity-stream .wordmark::before, .showPrivate .wordmark::before {
     width: 70px;
     height: 70px;
   }
 
-  .activity-stream .fake-textbox {
+  .activity-stream .fake-textbox, .showPrivate .fake-textbox {
     display: none !important;
   }
 }
 
-.activity-stream .search-handoff-button {
+.activity-stream .search-handoff-button, .showPrivate .search-handoff-button {
   border-radius: var(--shimmer-urlbar-rounding) !important;
-  mix-blend-mode: color-burn;
+}
+.activity-stream .search-handoff-button {
+  mix-blend-mode: color-burn !important;
 }
 
+.activity-stream .search-inner-wrapper, .showPrivate .logo-and-wordmark {
+  background: transparent !important;
+}
 .activity-stream .search-inner-wrapper {
   mix-blend-mode: color-burn !important;
-  background: transparent !important;
 }
 
 .activity-stream .wallpaper-attribution {
@@ -103,13 +113,13 @@
   filter: drop-shadow(0px 0px 1.5px rgba(0, 0, 0, 0.3)) !important;
 }
 
-.activity-stream .outer-wrapper {
+.activity-stream .outer-wrapper, .showPrivate .outer-wrapper {
   display: flex !important;
   padding: 48px !important;
 }
 
 .activity-stream .customize-menu .close-button-wrapper::before {
-  content: 'shimmer version 2.8, check for updates at';
+  content: 'shimmer version 2.9, check for updates at';
   display: block;
   position: absolute;
   top: 35%;
@@ -123,4 +133,8 @@
   position: absolute;
   bottom: 0;
   font-size: 0.875rem;
+}
+
+.showPrivate .info {
+  border-radius: 30px !important;
 }
