@@ -839,8 +839,10 @@ treecol {
     }
     padding: 0 var(--shimmer-winctr-gap) !important;
   }
-  #PanelUI-menu-button {
-    padding-right: 0 !important;
+  @media not (-moz-bool-pref: "shimmer.reverse-winctr-buttons-side") {
+    #PanelUI-menu-button {
+      padding-right: 0 !important;
+    }
   }
   /* .titlebar-buttonbox-container {
     margin: 0 var(--shimmer-winctr-margin) 0 0 !important;
