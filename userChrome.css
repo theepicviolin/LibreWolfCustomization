@@ -19,7 +19,12 @@
   --shimmer-top-bottom-browser-margin: 8px;
 
   /* could be hardcoded in some places... */
-  --shimmer-btn-anim: background 0.075s linear, opacity 0.075s linear !important;
+  --shimmer-btn-anim: background 0.075s linear, opacity 0.075s linear;
+
+  /*? gap between window control buttons */
+  --shimmer-winctr-gap: 5px;
+  /*? margin around winctr buttons */
+  --shimmer-winctr-margin: 12px;
 }
 
 /*? overwritten variables */
@@ -223,16 +228,16 @@
 
 /*? make the background of extended urlbar move down and BROKEN drop a blur behing */
 #urlbar[breakout-extend] {
-  width: 100vw !important;
-  position: absolute !important;
-  margin-top: 10vh !important;
+  position: fixed !important;
+  margin-top: 12vh !important;
   /* margin-left: 8vw !important; */
   z-index: 9999 !important;
   transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
-  max-width: 70vw !important;
   /* backdrop-filter: blur(8px) !important; */
   background: rgba(0, 0, 0, 0) !important;
   /* border-radius: 20px; */
+  left: 10% !important;
+  width: calc(100vw - 20%) !important;
 }
 
 #urlbar[breakout-extend] #urlbar-background {
@@ -550,7 +555,8 @@ findbar:not([hidden]) {
   border-radius: var(--shimmer-tab-border-radius) !important;
 }
 
-.tabbrowser-tab:hover .tab-close-button {
+/*? show tab close buttons when hovering tab */
+.tabbrowser-tab:not([pinned]):hover .tab-close-button {
   display: block !important;
 }
 
@@ -571,8 +577,9 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 
 /*? tab height and x button pos */
 @media not (-moz-bool-pref: "shimmer.taller-tabs") {
-  #tabbrowser-tabs {
+  #tabbrowser-tabs, .tabbrowser-tab {
     min-height: 38px !important;
+    height: 38px !important;
   }
 
   .tab-close-button {
@@ -580,13 +587,19 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   }
 }
 @media (-moz-bool-pref: "shimmer.taller-tabs") {
-  #tabbrowser-tabs {
+  #tabbrowser-tabs, .tabbrowser-tab {
     min-height: 45px !important;
+    height: 45px !important;
   }
 
   .tab-close-button {
     margin-inline-end: -3px !important;
   }
+}
+
+/*? make inner tab html occupy whole height (for some reason wouldn't happen to pinned tab) */
+.tab-stack {
+  height: 100% !important;
 }
 
 /*? don't change background behind tabs even when window inactive */
@@ -768,7 +781,7 @@ treecol {
   transition: var(--shimmer-btn-anim) !important;
 }
 
-/*! === autoscroller ===  */
+/*! === autoscroller === */
 
 /* why no work */
 /* #autoscroller slot[part="content"] {
@@ -782,10 +795,59 @@ treecol {
   border-radius: 12px !important;
 } */
 
+/*! === compact, macos-like winctr buttons === */
+@media not (-moz-bool-pref: "shimmer.disable-compact-winctr-buttons") {
+  .titlebar-buttonbox > toolbarbutton {
+    background: rgba(0, 0, 0, 0) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  
+    & > image {
+      width: 14px !important;
+      height: 14px !important;
+      border-radius: 12px !important;
+      transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+      list-style-image: none !important;
+      box-sizing: content-box !important;
+      padding: 0px !important;
+      background: var(--toolbarbutton-hover-background) !important;
+    }
+  
+    &:hover > image {
+      transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+      padding: 5px 0 !important;
+    }
+  }
+  .titlebar-close {
+    /* background: hsl(355, 86%, 49%) url(chrome://browser/skin/window-controls/close.svg) no-repeat center !important; */
+    &:hover > image {
+      background: #fc5753 !important;
+    }
+    padding-right: calc(var(--shimmer-winctr-gap) + var(--shimmer-winctr-margin)) !important;
+    padding-left: var(--shimmer-winctr-gap) !important;
+  }
+  .titlebar-min {
+    &:hover > image {
+      background: #fdbc40 !important;
+    }
+    padding-left: calc(var(--shimmer-winctr-gap) + var(--shimmer-winctr-margin)) !important;
+    padding-right: var(--shimmer-winctr-gap) !important;
+  }
+  .titlebar-max, .titlebar-restore {
+    &:hover > image {
+      background: #33c748 !important;
+    }
+    padding: 0 var(--shimmer-winctr-gap) !important;
+  }
+  #PanelUI-menu-button {
+    padding-right: 0 !important;
+  }
+  /* .titlebar-buttonbox-container {
+    margin: 0 var(--shimmer-winctr-margin) 0 0 !important;
+  } */
+}
+
+
 /* review:  todo, change, fix */
 /*TODO some of the usual buttons that appear on the right-click context menu are hidden. right now you can change them at the top of `userChrome.css`. i will maybe later introduce `about:config` variables for easier customization */
-/*TODO private mode about::newtab */
-/*TODO some private mode indicator */
-/*TODO fix pinned tab */
-/*TODO fix #11 should be simple */
 /*TODO autoscroller styles */

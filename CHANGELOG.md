@@ -1,3 +1,9 @@
+# v2.10
+ - new, macos-like compact window control buttons (#17)
+ - new config property `shimmer.disable-compact-winctr-buttons`, which reverts the compact window control buttons to default
+ - popover urlbar is now centered (#15)
+ - pinned tab now takes up the whole height of the tabbar
+
 # v2.9
  - further updated context menu colors
  - added a compact private browsing indicator
