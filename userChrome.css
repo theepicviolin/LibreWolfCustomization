@@ -539,7 +539,7 @@ findbar:not([hidden]) {
 /*! === tabs === */
 
 /*? tab on titlebar that's not pinned */
-.tabbrowser-tab[fadein]:not([pinned]) {
+.tabbrowser-tab[fadein][orient="horizontal"]:not([pinned]) {
   /*? min tab width */
   min-width: var(--shimmer-tab-min-width) !important;
   /*? max tab width */
@@ -556,7 +556,7 @@ findbar:not([hidden]) {
 }
 
 /*? show tab close buttons when hovering tab */
-.tabbrowser-tab:not([pinned]):hover .tab-close-button {
+.tabbrowser-tab[orient="horizontal"]:not([pinned]):hover .tab-close-button {
   display: block !important;
 }
 
@@ -576,8 +576,14 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 /*? tab height and x button pos */
+#tabbrowser-tabs[orient="vertical"] .tab-background {min-height: 28px !important;}
+
+#tabbrowser-tabs[orient="vertical"][expanded] {
+	min-width: 400px !important;
+}
+
 @media not (-moz-bool-pref: "shimmer.taller-tabs") {
-  #tabbrowser-tabs, .tabbrowser-tab {
+  #tabbrowser-tabs[orient="horizontal"], .tabbrowser-tab[orient="horizontal"] {
     min-height: 38px !important;
     height: 38px !important;
   }
@@ -587,7 +593,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   }
 }
 @media (-moz-bool-pref: "shimmer.taller-tabs") {
-  #tabbrowser-tabs, .tabbrowser-tab {
+  #tabbrowser-tabs[orient="horizontal"], .tabbrowser-tab[orient="horizontal"] {
     min-height: 45px !important;
     height: 45px !important;
   }
