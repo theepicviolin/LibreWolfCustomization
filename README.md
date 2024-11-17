@@ -4,30 +4,39 @@ see the [changelog](CHANGELOG.md) for a history of changes
 ## demonstration
 
 ### light theme with sidebery, sidebar on left side
-![sidebery_light](https://github.com/user-attachments/assets/27a8b0b0-64dd-4807-b71c-ee1b50362054)
+| sidebery, light theme, sidebar on left side                                                       | native tabs, "black" theme                                                                      |
+|---------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
+| ![whitesidebery](https://github.com/user-attachments/assets/b2a0dd0d-6cbe-4c8c-b62f-cdcba03716e4) | ![blacknative](https://github.com/user-attachments/assets/caef136c-6811-4e39-8aaa-50ee6f803648) |
 
-| menus                                                                                       | urlbar                                                                                     |
+
+| menus                                                                                       | popover urlbar                                                                             |
 |---------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|
-| ![ctxmenu](https://github.com/user-attachments/assets/7da9bdff-d247-4680-ad20-70d12c886272) | ![urlbar](https://github.com/user-attachments/assets/fec1c172-78b3-4c2b-a98c-90fe23f47e4a) |
+| ![ctxmenu](https://github.com/user-attachments/assets/7da9bdff-d247-4680-ad20-70d12c886272) | ![urlbar](https://github.com/user-attachments/assets/8b328ecf-0297-4e8c-8cb6-8826040c7916) |
 
-### compact sidebar (very proud of the icons :P)
-![findbar](https://github.com/user-attachments/assets/942f7b2d-bb06-4d79-8487-9cf587fe8643)
+### compact findbar
+![findbar](https://github.com/user-attachments/assets/da46b9d5-2275-4b47-91be-934ceae368c7)
 
-### native tabs (no sidebery)
-![tabs_darkmagic](https://github.com/user-attachments/assets/087c5eb0-a819-406f-aab9-6ddf6f270509)
+### quality of life improvements
+![tab](https://github.com/user-attachments/assets/d445d8ee-d200-4c81-adb3-5bbae8f15ace)
+
+### compact, macos-like window control buttons
+![winctr](https://github.com/user-attachments/assets/934849bd-19ba-4617-8bfe-f5b41508a872)
+
 
 
 
 
 ## features
  - popover url-bar (see demo animated image)
- - works with custom themes (create an issue on github if you have any problems :D)
+ - works with custom themes
  - rounded browser/sidebar corners
  - minimized context menus
  - subtle, non-obstructive transitions
  - minimized findbar
  - setting available to move sidebar to the right side
  - small, 1px border at the top of the window to allow easy dragging when maximized
+ - config properties for customization
+ - compatible with firefox nightly
 
 ## installation
 
