@@ -1,3 +1,8 @@
+# v2.12
+ - findbar match amount now visible :P
+ - when using native tabs, active tab has a minimal width
+ - fixed a small bug where the panelui button wouldn't have a padding on the right in some cases
+
 # v2.11
  - added some support for native vertical tabs (pr, #18)
 

@@ -324,10 +324,10 @@ findbar {
   /*? relative for margins */
   position: relative !important;
   border-radius: 16px !important;
-  bottom: 46px !important;
+  bottom: 60px !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  width: 560px !important;
+  width: 530px !important;
   height: 3rem !important;
   display: flex !important;
   align-items: center !important;
@@ -335,7 +335,8 @@ findbar {
   margin-top: -40px !important;
   border: 0 !important;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
-  overflow: hidden !important;
+  overflow-x: visible !important;
+  filter: drop-shadow(0px 0px 1px color-mix(in srgb, var(--lwt-text-color) 60%, rgba(0, 0, 0, 0)));
 }
 
 findbar[hidden]{
@@ -399,7 +400,7 @@ findbar:not([hidden]) {
   border-radius: 11px !important;
   font-family: monospace !important;
   padding: 5px 8px !important;
-  max-width: 215px !important;
+  width: 16em !important;
 }
 
 .findbar-closebutton:hover {
@@ -413,6 +414,38 @@ findbar:not([hidden]) {
   width: auto !important;
 }
 
+/*? move matched amount below main findbar */
+.found-matches {
+  position: absolute !important;
+  padding: 20px 13px 3px 10px !important;
+  top: 14px !important;
+  background: var(--lwt-accent-color) !important;
+  /* border: solid var(--arrowpanel-border-color) 1px !important; */
+  left: -12px !important;
+  border-bottom-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+  z-index: 9 !important;
+}
+.findbar-find-status {
+  display: none !important;
+}
+.found-matches::before {
+  z-index: 8 !important;
+}
+.found-matches::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 16px;
+  height: 22px;
+  background: var(--lwt-accent-color);
+  right: -6px;
+  top: 12px;
+  transform: rotate(45deg);
+}
+.findbar-textbox { 
+  z-index: 10 !important;
+}
 
 
 /*? compact private browsing indicator */
@@ -622,7 +655,18 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   transition: var(--shimmer-btn-anim) !important;
 }
 
+/*? reduce max tab width, breaks everything lol */
+/* .tabbrowser-tab {
+  max-width: 14em !important;
+} */
+
+/*? minimal tab width */
+#tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab:not([pinned])[selected] {
+  min-width: 12em !important;
+}
+
 /*! === sidebar === */
+
 /*? hide header, or give good color */
 @media not (-moz-bool-pref: "shimmer.show-sidebar-header") {
   #sidebar-header {
@@ -846,7 +890,7 @@ treecol {
     padding: 0 var(--shimmer-winctr-gap) !important;
   }
   @media not (-moz-bool-pref: "shimmer.reverse-winctr-buttons-side") {
-    #PanelUI-menu-button {
+    #main-window[titlepreface="​"] #PanelUI-menu-button {
       padding-right: 0 !important;
     }
   }
