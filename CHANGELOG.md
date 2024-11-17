@@ -1,3 +1,6 @@
+# v2.11
+ - added some support for native vertical tabs (pr, #18)
+
 # v2.10
  - new, macos-like compact window control buttons (#17)
  - new config property `shimmer.disable-compact-winctr-buttons`, which reverts the compact window control buttons to default
