@@ -74,6 +74,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
  - `shimmer.reverse-winctr-buttons-side` - toggle true to move window control buttons to the left side
  - `shimmer.taller-tabs` - toggle true to make the tabs as tall as default firefox tabs
  - `shimmer.shorter-navbar` - toggle true to make the navbar as tall as on unmodified firefox (may require firefox restart)
+ - `shimmer.disable-compact-winctr-buttons` toggle true to revert the compact window control buttons to default
    
  some of the usual buttons that appear on the right-click context menu are hidden. right now you can change them at the top of `userChrome.css`. i will maybe later introduce `about:config` variables for easier customization
 
