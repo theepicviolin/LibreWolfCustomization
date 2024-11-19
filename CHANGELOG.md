@@ -1,3 +1,9 @@
+# v2.13
+ - added partial support for menubar (release, native tabs only and nightly, full support)
+ - made improvements with titlebar spacers' visibility
+ - new config property `shimmer.shimmer.hide-sidebar-button`, which hides the "show sidebars" button
+ - new config property `shimmer.dont-expand-selected-tab`, which removes the effect of expanding the active tab when there are many tabs open
+
 # v2.12
  - findbar match amount now visible :P
  - when using native tabs, active tab has a minimal width
