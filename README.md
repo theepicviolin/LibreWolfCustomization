@@ -6,9 +6,9 @@ see the [changelog](CHANGELOG.md) for a history of changes
 ## demonstration
 
 ### light theme with sidebery, sidebar on left side
-| sidebery, light theme, sidebar on left side                                                       | native tabs, "black" theme                                                                      |
-|---------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
-| ![whitesidebery](https://github.com/user-attachments/assets/b2a0dd0d-6cbe-4c8c-b62f-cdcba03716e4) | ![blacknative](https://github.com/user-attachments/assets/caef136c-6811-4e39-8aaa-50ee6f803648) |
+| sidebery, light theme, sidebar on left side                                                       | native tabs, "dark space" theme, shortcuts enabled                                                           |
+|---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| ![lightsidebery](https://github.com/user-attachments/assets/325064a2-4847-4f20-a75d-38268e8c21e1) | ![darkspacenativeshortcuts](https://github.com/user-attachments/assets/82e59bc2-7bd1-409b-9b31-1d872ff77d92) |
 
 
 | menus                                                                                       | popover urlbar                                                                             |
@@ -17,9 +17,6 @@ see the [changelog](CHANGELOG.md) for a history of changes
 
 ### compact findbar
 ![findbar](https://github.com/user-attachments/assets/da46b9d5-2275-4b47-91be-934ceae368c7)
-
-### quality of life improvements
-![tab](https://github.com/user-attachments/assets/d445d8ee-d200-4c81-adb3-5bbae8f15ace)
 
 ### compact, macos-like window control buttons
 ![winctr](https://github.com/user-attachments/assets/934849bd-19ba-4617-8bfe-f5b41508a872)
