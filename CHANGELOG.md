@@ -1,3 +1,7 @@
+# v2.14
+ - fixed an issue where tabs would get cut in half and translated when moving (#20)
+ - make pop-up windows (e.g. steam login page) have a restricted urlbar max-width
+
 # v2.13
  - added partial support for menubar (release, native tabs only and nightly, full support)
  - made improvements with titlebar spacers' visibility

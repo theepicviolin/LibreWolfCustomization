@@ -1,4 +1,4 @@
-# shimmer - pleasant firefox userchrome with sidebery support (v2.13)
+# shimmer - pleasant firefox userchrome with sidebery support (v2.14)
 ![STAR BUTTON](https://github.com/user-attachments/assets/227bfd9e-ce3a-4d76-b8b7-24ad55dc128a)[![ISSUE](https://github.com/user-attachments/assets/648d41c3-4812-47fd-9696-38d76a2a0a5a)](https://github.com/nuclearcodecat/shimmer/issues)[![MONEY BUTTON](https://github.com/user-attachments/assets/18d7f816-f784-46b2-97b1-89173f68e227)](https://ko-fi.com/nuclearcodecat)
 
 see the [changelog](CHANGELOG.md) for a history of changes
@@ -36,7 +36,6 @@ see the [changelog](CHANGELOG.md) for a history of changes
  - subtle, non-obstructive transitions
  - minimized findbar
  - setting available to move sidebar to the right side
- - small, 1px border at the top of the window to allow easy dragging when maximized
  - config properties for customization
  - compatible with firefox nightly
 

@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.13 */
+/*! SHIMMMER v2.14 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -203,12 +203,12 @@
 }
 
 /*? make the window grabbable at the top, but not the window control buttons */
-#main-window[titlepreface="​"] #nav-bar {
+/* #main-window[titlepreface="​"] #nav-bar {
   border-top: 1px solid rgba(0, 0, 0, 0) !important;
 }
 #main-window[titlepreface=""] .toolbar-items {
   margin-top: 1px !important;
-}
+} */
 
 /*? hide native tabs */
 #main-window[titlepreface="​"] #TabsToolbar > .toolbar-items {
@@ -351,6 +351,13 @@
 /*? make rounded borders have nice color */
 #browser {
   background: var(--toolbar-bgcolor) !important;
+}
+
+/*? if popup window, make urlbar smaller and centered */
+#main-window[chromehidden*="toolbar"] #urlbar-container {
+  max-width: 90% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /*! === findbar === */
@@ -700,6 +707,16 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 @media not (-moz-bool-pref: "shimmer.dont-expand-selected-tab") {
   #tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab:not([pinned])[selected] {
     min-width: 12em !important;
+  }
+}
+
+/*? fix for moving tabs looking weird */
+#tabbrowser-tabs {
+  &[orient="horizontal"] {
+    &[movingtab] {
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+    }
   }
 }
 
