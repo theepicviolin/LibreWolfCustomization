@@ -18,6 +18,9 @@ see the [changelog](CHANGELOG.md) for a history of changes
 ### compact findbar
 ![findbar](https://github.com/user-attachments/assets/da46b9d5-2275-4b47-91be-934ceae368c7)
 
+### quality of life improvements
+![tab](https://github.com/user-attachments/assets/21849280-e50a-47e1-a958-677e823962a0)
+
 ### compact, macos-like window control buttons
 ![winctr](https://github.com/user-attachments/assets/934849bd-19ba-4617-8bfe-f5b41508a872)
 
