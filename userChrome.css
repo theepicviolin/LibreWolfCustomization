@@ -11,9 +11,9 @@
   --shimmer-urlbar-inner-rounding: calc(var(--shimmer-urlbar-rounding) * .75);
 
   /*? max tab width */
-  --shimmer-tab-max-width: 165px;
+  --shimmer-tab-max-width: 14em;
   /*? min tab width */
-  --shimmer-tab-min-width: 135px;
+  --shimmer-tab-min-width: 9em;
 
   /* --shimmer-tab-height: 32px; */
   /* --shimmer-titlebar-height: calc(var(--shimmer-tab-height) + 6px); */
@@ -706,7 +706,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 /*? minimal selected tab width */
 @media not (-moz-bool-pref: "shimmer.dont-expand-selected-tab") {
   #tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab:not([pinned])[selected] {
-    min-width: 12em !important;
+    min-width: 14em !important;
   }
 }
 
