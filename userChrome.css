@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.14 */
+/*! SHIMMMER v2.15 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -11,9 +11,11 @@
   --shimmer-urlbar-inner-rounding: calc(var(--shimmer-urlbar-rounding) * .75);
 
   /*? max tab width */
-  --shimmer-tab-max-width: 14em;
+  --shimmer-tab-max-width: 13em;
   /*? min tab width */
   --shimmer-tab-min-width: 9em;
+  /*? selected tab width */
+  --shimmer-tab-selected-width: var(--shimmer-tab-max-width);
 
   /* --shimmer-tab-height: 32px; */
   /* --shimmer-titlebar-height: calc(var(--shimmer-tab-height) + 6px); */
@@ -119,7 +121,6 @@
   height: 100% !important;
 }
 
-
 /*? make extensions buttons reach the entire height of navbar */
 #nav-bar-customization-target toolbarbutton {
   height: 100% !important;
@@ -128,7 +129,6 @@
 #urlbar {
   margin: 0 !important;
 }
-
 
 /*? move the window control buttons to the same row as urlbar */
 #main-window[titlepreface="​"] #navigator-toolbox {
@@ -375,7 +375,7 @@ findbar {
   display: flex !important;
   align-items: center !important;
   /*? fix for relative positioning */
-  margin-top: -40px !important;
+  margin-top: -36px !important;
   border: 0 !important;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
   overflow-x: visible !important;
@@ -698,15 +698,10 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   transition: var(--shimmer-btn-anim) !important;
 }
 
-/*? reduce max tab width, breaks everything lol */
-/* .tabbrowser-tab {
-  max-width: 14em !important;
-} */
-
 /*? minimal selected tab width */
 @media not (-moz-bool-pref: "shimmer.dont-expand-selected-tab") {
   #tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab:not([pinned])[selected] {
-    min-width: 14em !important;
+    min-width: var(--shimmer-tab-selected-width) !important;
   }
 }
 

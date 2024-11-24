@@ -1,3 +1,7 @@
+# v2.15
+ - added a css variable `--shimmer-tab-selected-width` regarding the selected tab
+ - findbar positioning improved
+
 # v2.14
  - fixed an issue where tabs would get cut in half and translated when moving (#20)
  - make pop-up windows (e.g. steam login page) have a restricted urlbar max-width
