@@ -3,6 +3,8 @@
 
 see the [changelog](CHANGELOG.md) for a history of changes
 
+thanks for 100 stars :P
+
 ## demonstration
 
 ### light theme with sidebery, sidebar on left side
