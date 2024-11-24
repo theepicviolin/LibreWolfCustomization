@@ -81,6 +81,8 @@ thanks for 100 stars :P
    
  some of the usual buttons that appear on the right-click context menu are hidden. right now you can change them at the top of `userChrome.css`. i will maybe later introduce `about:config` variables for easier customization
 
+you can also change some css variables there such as `--shimmer-tab-max-width`, `--shimmer-tab-min-width` and `--shimmer-tab-selected-width`, there are other variables though
+
 
 ## maintaining
  please keep in mind that i won't always have time to fix a problem created by a new version of firefox in a day. if you'd like to create a pull request, feel free to do so. if you find any issues, please report them at the "issues" tab on github.
