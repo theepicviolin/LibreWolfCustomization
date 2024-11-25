@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.15 */
+/*! SHIMMMER v2.16 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -763,18 +763,21 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   margin-right: 10px !important;
 }
 
+/*? hide ugly border around tabbox */
+#tabbrowser-tabbox * {
+  border: 0 !important;
+}
+
 /*? rounded browser on left edge */
 #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
   border-radius: 0;
-  border-top-left-radius: var(--shimmer-browser-border-radius) !important;
-  border-bottom-left-radius: var(--shimmer-browser-border-radius) !important;
+  clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
   overflow: hidden !important;
 }
 
 /*? rounded sidebar on right edge */
 #sidebar-box {
-  border-top-right-radius: var(--shimmer-browser-border-radius) !important;
-  border-bottom-right-radius: var(--shimmer-browser-border-radius) !important;
+  clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
   overflow: hidden !important;
 }
 
@@ -782,15 +785,13 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   /*? rounded browser on right edge */
   #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
     border-radius: 0 !important;
-    border-top-right-radius: var(--shimmer-browser-border-radius) !important;
-    border-bottom-right-radius: var(--shimmer-browser-border-radius) !important;
+    clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
   }
 
   /*? rounded sidebar on left edge */
   #sidebar-box {
     border-radius: 0 !important;
-    border-top-left-radius: var(--shimmer-browser-border-radius) !important;
-    border-bottom-left-radius: var(--shimmer-browser-border-radius) !important;
+    clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
   }
 }
 

@@ -1,3 +1,7 @@
+# v2.16
+ - fixed an issue with some borders showing through around the browser box
+ - fixed an issue with browser box's rounded corners disappearing (#24)
+
 # v2.15
  - added a css variable `--shimmer-tab-selected-width` regarding the selected tab
  - findbar positioning improved
