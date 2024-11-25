@@ -66,8 +66,10 @@ thanks for 100 stars :P
  ### how to update:
   follow the installation instructions, allow your file explorer to replace files if asked (remember to update sidebery styles)
 
-## config
- i've implemented some custom `about:config` values for you to modify. the list is small right now but i'm hoping to see some ideas and issues pop up
+## customization
+ at the top of `userChrome.css`, there are customizable css variables. among them are tab sizing options, rounding, spacing between certain items etc. below these variable there also exist exclusions from the right click context menu. comment and uncomment whichever options you might want to enable or disable.
+ 
+ i've also implemented some custom `about:config` boolean values for you to modify. the list is small right now but i'm hoping to see some ideas and issues pop up
  - `shimmer.nightly` - toggle true if using firefox nightly
  - `shimmer.show-sidebar-header` - toggle true to show sidebar header
  - `shimmer.show-sidebar-header-close-button` - even if you enable the header, the close button is automatically hidden. toggle this true to make it reappear
@@ -78,10 +80,6 @@ thanks for 100 stars :P
  - `shimmer.disable-compact-winctr-buttons` - toggle true to revert the compact window control buttons to default
  - `shimmer.dont-expand-selected-tab` - toggle true to disable the effect of expanding the active tab when there are many tabs open
  - `shimmer.shimmer.hide-sidebar-button` - toggle true to hide the "show sidebars" button
-   
- some of the usual buttons that appear on the right-click context menu are hidden. right now you can change them at the top of `userChrome.css`. i will maybe later introduce `about:config` variables for easier customization
-
-you can also change some css variables there such as `--shimmer-tab-max-width`, `--shimmer-tab-min-width` and `--shimmer-tab-selected-width`, among others
 
 ## maintaining
  please keep in mind that i won't always have time to fix a problem created by a new version of firefox in a day. if you'd like to create a pull request, feel free to do so. if you find any issues, please report them at the "issues" tab on github.
