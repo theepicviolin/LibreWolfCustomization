@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.16 */
+/*! SHIMMMER v2.17 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -153,15 +153,8 @@
     grid-area: 3 / 1 / 4 / 2 !important;
   }
 
-  @media (-moz-bool-pref: "shimmer.nightly") {
-    #main-window[titlepreface="​"] #TabsToolbar {
-      grid-area: 3 / 2 / 4 / 3 !important;
-    }
-  }
-  @media not (-moz-bool-pref: "shimmer.nightly") {
-    #main-window[titlepreface="​"] #titlebar {
-      grid-area: 3 / 2 / 4 / 3 !important;
-    }
+  #main-window[titlepreface="​"] #TabsToolbar {
+    grid-area: 3 / 2 / 4 / 3 !important;
   }
 }
 @media (-moz-bool-pref: "shimmer.reverse-winctr-buttons-side") {
@@ -173,15 +166,8 @@
     grid-area: 3 / 2 / 4 / 3 !important;
   }
 
-  @media (-moz-bool-pref: "shimmer.nightly") {
-    #main-window[titlepreface="​"] #TabsToolbar {
-      grid-area: 3 / 1 / 4 / 2 !important;
-    }
-  }
-  @media not (-moz-bool-pref: "shimmer.nightly") {
-    #main-window[titlepreface="​"] #titlebar {
-      grid-area: 3 / 1 / 4 / 2 !important;
-    }
+  #main-window[titlepreface="​"] #TabsToolbar {
+    grid-area: 3 / 1 / 4 / 2 !important;
   }
 
   #TabsToolbar {
@@ -228,10 +214,8 @@
 /*! === menubar === */
 
 /*? hide regular winctr buttons when menubar is open */
-@media (-moz-bool-pref: "shimmer.nightly") {
-  #toolbar-menubar:not([inactive]) ~ #TabsToolbar .titlebar-buttonbox-container {
-    display: none !important;
-  }
+#toolbar-menubar:not([inactive]) ~ #TabsToolbar .titlebar-buttonbox-container {
+  display: none !important;
 }
 
 #toolbar-menubar:not([inactive]) {

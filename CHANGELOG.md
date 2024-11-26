@@ -1,3 +1,7 @@
+# v2.17
+ - updated to conform to firefox version 133 (firefox stable has been updated to version 133. this breaks some of the styles used in shimmer. please update to v2.17 or use `shimmer.nightly` config property to fix the issues.)
+ - menubar improvements
+
 # v2.16
  - fixed an issue with some borders showing through around the browser box
  - fixed an issue with browser box's rounded corners disappearing (#24)

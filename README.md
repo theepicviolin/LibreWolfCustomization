@@ -1,4 +1,7 @@
-# shimmer - pleasant firefox userchrome with sidebery support (v2.16)
+## important notice
+ firefox stable has been updated to version 133. this breaks some of the styles used in shimmer. please update to v2.17 or use `shimmer.nightly` config property to fix the issues.
+
+# shimmer - pleasant firefox userchrome with sidebery support (v2.17)
 ![STAR BUTTON](https://github.com/user-attachments/assets/227bfd9e-ce3a-4d76-b8b7-24ad55dc128a)[![ISSUE](https://github.com/user-attachments/assets/648d41c3-4812-47fd-9696-38d76a2a0a5a)](https://github.com/nuclearcodecat/shimmer/issues)[![MONEY BUTTON](https://github.com/user-attachments/assets/18d7f816-f784-46b2-97b1-89173f68e227)](https://ko-fi.com/nuclearcodecat)
 
 see the [changelog](CHANGELOG.md) for a history of changes
@@ -52,7 +55,6 @@ thanks for 100 stars :P
  - go to about:config
  - toggle `toolkit.legacyUserProfileCustomizations.stylesheets` true
  - toggle `svg.context-properties.content.enabled` true
- - if you're using firefox nightly, type `shimmer.nightly` into the config search box, then click `+` below
  - open about:profiles, find your profile and open the root folder
  - create a `chrome` folder if nonexistent
  - move `userChrome.css`, `userContent.css` files and `assets` folder into the `chrome` directory
@@ -70,7 +72,7 @@ thanks for 100 stars :P
  at the top of `userChrome.css`, there are customizable css variables. among them are tab sizing options, rounding, spacing between certain items etc. below these variable there also exist exclusions from the right click context menu. comment and uncomment whichever options you might want to enable or disable.
  
  i've also implemented some custom `about:config` boolean values for you to modify. the list is small right now but i'm hoping to see some ideas and issues pop up
- - `shimmer.nightly` - toggle true if using firefox nightly
+ - `shimmer.nightly` - toggle true if using firefox nightly (v2.17 up, unused)
  - `shimmer.show-sidebar-header` - toggle true to show sidebar header
  - `shimmer.show-sidebar-header-close-button` - even if you enable the header, the close button is automatically hidden. toggle this true to make it reappear
  - `shimmer.sidebar-right-side` - toggle true if you use sidebery on the right side. you have to move the sidebar first in firefox using the sidebar header, which has to be reenabled in config
