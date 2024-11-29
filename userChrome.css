@@ -19,7 +19,7 @@
 
   /* --shimmer-tab-height: 32px; */
   /* --shimmer-titlebar-height: calc(var(--shimmer-tab-height) + 6px); */
-  --shimmer-tab-border-radius: 16px;
+  --shimmer-tab-border-radius: 12px;
   --shimmer-browser-border-radius: 20px;
   --shimmer-top-bottom-browser-margin: 8px;
 
@@ -138,21 +138,45 @@
 #PersonalToolbar:not([collapsed="true"]) {
   padding-bottom: calc(var(--shimmer-top-bottom-browser-margin) / 2) !important;
 }
-#main-window[titlepreface="​"] #PersonalToolbar {
-  grid-area: 4 / 1 / 5 / 3 !important;
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #PersonalToolbar {
+    grid-area: 4 / 1 / 5 / 3 !important;
+  }
 }
-#main-window[titlepreface="​"] #toolbar-menubar {
-  grid-area: 1 / 1 / 2 / 3 !important;
+@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #main-window[titlepreface="​"] #PersonalToolbar {
+    grid-area: 4 / 1 / 5 / 3 !important;
+  }
+}
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #toolbar-menubar {
+    grid-area: 1 / 1 / 2 / 3 !important;
+  }
+}
+@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #main-window[titlepreface="​"] #toolbar-menubar {
+    grid-area: 1 / 1 / 2 / 3 !important;
+  }
 }
 @media not (-moz-bool-pref: "shimmer.reverse-winctr-buttons-side") {
   #navigator-toolbox {
     grid-template-columns: 1fr auto !important;
   }
 
+  @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    #nav-bar {
+      grid-area: 3 / 1 / 4 / 2 !important;
+    }
+  }
   #main-window[titlepreface="​"] #nav-bar {
     grid-area: 3 / 1 / 4 / 2 !important;
   }
 
+  @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    #TabsToolbar {
+      grid-area: 3 / 2 / 4 / 3 !important;
+    }
+  }
   #main-window[titlepreface="​"] #TabsToolbar {
     grid-area: 3 / 2 / 4 / 3 !important;
   }
@@ -162,10 +186,20 @@
     grid-template-columns: auto 1fr !important;
   }
 
+  @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    #nav-bar {
+      grid-area: 3 / 2 / 4 / 3 !important;
+    }
+  }
   #main-window[titlepreface="​"] #nav-bar {
     grid-area: 3 / 2 / 4 / 3 !important;
   }
 
+  @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    #TabsToolbar {
+      grid-area: 3 / 1 / 4 / 2 !important;
+    }
+  }
   #main-window[titlepreface="​"] #TabsToolbar {
     grid-area: 3 / 1 / 4 / 2 !important;
   }
@@ -197,18 +231,45 @@
 } */
 
 /*? hide native tabs */
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #TabsToolbar > .toolbar-items {
+    display: none !important;
+  }
+}
 #main-window[titlepreface="​"] #TabsToolbar > .toolbar-items {
   display: none !important;
 }
 
 /*? make navigation buttons white_ when sidebar open */
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #navigator-toolbox, #nav-bar {
+    background: var(--toolbar-bgcolor) !important;
+  }
+}
 #main-window[titlepreface="​"] #navigator-toolbox {
   background: var(--toolbar-bgcolor) !important;
 }
 
 /*? hide spacers when sidebery open */
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #TabsToolbar .titlebar-spacer {
+    display: none;
+  }
+}
 #main-window[titlepreface="​"] #TabsToolbar .titlebar-spacer {
   display: none;
+}
+
+/*? smaller titlebar buttons */
+.toolbar-items {
+  & .toolbarbutton-icon {
+    padding: 4px !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  & .toolbarbutton-badge-stack {
+    padding: 0 !important;
+  } 
 }
 
 /*! === menubar === */
@@ -232,7 +293,7 @@
   }
 }
 
-/*! === urlbar === */
+/*! === navbar === */
 
 /*? rounded url bar and box */
 #urlbar-background {
@@ -342,6 +403,15 @@
   max-width: 90% !important;
   margin-left: auto !important;
   margin-right: auto !important;
+}
+
+/*? bigger rounding for navbar buttons */
+#nav-bar {
+  toolbarbutton {
+    & > stack, & > image {
+      border-radius: 8px !important;
+    }
+  }
 }
 
 /*! === findbar === */
@@ -611,8 +681,6 @@ findbar:not([hidden]) {
   min-height: 0 !important;
   border: solid 1px color-mix(in srgb, var(--tab-selected-bgcolor) 90%, #000);
   box-shadow: 0 0 0 #fff !important;
-  /* CHANGED check overwritten vars for tab rounding */
-  border-radius: var(--shimmer-tab-border-radius) !important;
 }
 
 /*? show tab close buttons when hovering tab */
@@ -638,10 +706,6 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 /*? tab height and x button pos */
 #tabbrowser-tabs[orient="vertical"] .tab-background {min-height: 28px !important;}
 
-#tabbrowser-tabs[orient="vertical"][expanded] {
-	min-width: 400px !important;
-}
-
 @media not (-moz-bool-pref: "shimmer.taller-tabs") {
   #tabbrowser-tabs[orient="horizontal"], .tabbrowser-tab {
     min-height: 38px !important;
@@ -649,7 +713,14 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   }
 
   .tab-close-button {
-    margin-inline-end: -7px !important;
+    margin-inline-end: -3px !important;
+    width: 20px !important;
+    height: 20px !important;
+    padding: 4px !important;
+  }
+
+  .tab-background {
+    border-radius: var(--shimmer-tab-border-radius) !important;
   }
 }
 @media (-moz-bool-pref: "shimmer.taller-tabs") {
@@ -659,7 +730,14 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   }
 
   .tab-close-button {
-    margin-inline-end: -3px !important;
+    margin-inline-end: -1px !important;
+    width: 24px !important;
+    height: 24px !important;
+    padding: 6px !important;
+  }
+
+  .tab-background {
+    border-radius: calc(var(--shimmer-tab-border-radius) * 1.2) !important;
   }
 }
 
@@ -675,7 +753,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 
 /*? rounded tab close button */
 .tab-close-button {
-  border-radius: var(--shimmer-tab-border-radius) !important;
+  border-radius: calc(var(--shimmer-tab-border-radius) * 0.6) !important;
 }
 
 .tab-close-button, .tab-close-button:hover {
@@ -716,18 +794,35 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   border-bottom: 0 !important;
 }
 
-#sidebar-box:not([hidden]), #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
-  margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #tabbrowser-tabbox, #sidebar-main {
+    margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
+  }
+}
+@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #sidebar-box:not([hidden]), #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+    margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
+  }
 }
 
-#sidebar-box:not([hidden]) {
-  margin-left: 0 !important;
-  margin-right: var(--splitter-width) !important;
+
+/*? native vert tabs space on right edge */
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #sidebar-main {
+    margin-left: 0 !important;
+    margin-right: var(--splitter-width);
+  }
 }
-@media (-moz-bool-pref: "shimmer.sidebar-right-side") {
+@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
   #sidebar-box:not([hidden]) {
-    margin-right: 0 !important;
-    margin-left: var(--splitter-width) !important;
+    margin-left: 0 !important;
+    margin-right: var(--splitter-width) !important;
+  }
+  @media (-moz-bool-pref: "shimmer.sidebar-right-side") {
+    #sidebar-box:not([hidden]) {
+      margin-right: 0 !important;
+      margin-left: var(--splitter-width) !important;
+    }
   }
 }
 
@@ -753,10 +848,19 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 /*? rounded browser on left edge */
-#sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
-  border-radius: 0;
-  clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
-  overflow: hidden !important;
+@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+    border-radius: 0;
+    clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
+    overflow: hidden !important;
+  }
+}
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #tabbrowser-tabbox {
+    border-radius: 0;
+    clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
+    overflow: hidden !important;
+  }
 }
 
 /*? rounded sidebar on right edge */
@@ -764,12 +868,25 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
   clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
   overflow: hidden !important;
 }
+@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+  #sidebar-main {
+    clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
+  }
+}
 
 @media (-moz-bool-pref: "shimmer.sidebar-right-side") {
   /*? rounded browser on right edge */
-  #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
-    border-radius: 0 !important;
-    clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
+  @media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+      border-radius: 0 !important;
+      clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
+    }
+  }
+  @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    #tabbrowser-tabbox {
+      border-radius: 0 !important;
+      clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
+    }
   }
 
   /*? rounded sidebar on left edge */
@@ -777,7 +894,18 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
     border-radius: 0 !important;
     clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
   }
+  @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+    #sidebar-main {
+      clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
+    }
+  }
 }
+
+/*? native vertical tabs background color */
+#sidebar-main {
+  background: var(--lwt-accent-color) !important;
+}
+
 
 /*? animated sidebar-box hidden animation, breaks native tabs because the sidebery titlepreface reappears when #sidebar-box display prop isn't none */
 /* #sidebar-box[hidden] {
@@ -938,6 +1066,11 @@ treecol {
   @media not (-moz-bool-pref: "shimmer.reverse-winctr-buttons-side") {
     #main-window[titlepreface="​"] #toolbar-menubar:not([inactive]) #PanelUI-menu-button {
       padding-right: 0 !important;
+    }
+    @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+      #toolbar-menubar:not([inactive]) #PanelUI-menu-button {
+        padding-right: 0 !important;
+      }
     }
   }
   /* .titlebar-buttonbox-container {

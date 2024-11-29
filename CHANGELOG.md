@@ -1,3 +1,9 @@
+# v2.18
+ - (very delicate 🙄) support for native vertical tabs
+ - new config property `shimmer.native-vertical-tabs`, which adds support for native vertical tabs
+ - adjusted default `--shimmer-tab-border-radius` from `16px` to `12px` for looks, change value in `userChrome.css` to revert
+ - updated styles for navbar and titlebar buttons
+
 # v2.17
  - updated to conform to firefox version 133 (firefox stable has been updated to version 133. this breaks some of the styles used in shimmer. please update to v2.17 or use `shimmer.nightly` config property to fix the issues.)
  - menubar improvements

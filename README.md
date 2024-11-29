@@ -1,4 +1,7 @@
-# shimmer - pleasant firefox userchrome with sidebery support (v2.17)
+## important notice
+ firefox stable has been updated to version 133. this breaks some of the styles used in shimmer. please update to v2.17 or use `shimmer.nightly` config property to fix the issues.
+
+# shimmer - charming firefox userchrome with sidebery support (v2.18)
 ![STAR BUTTON](https://github.com/user-attachments/assets/227bfd9e-ce3a-4d76-b8b7-24ad55dc128a)[![ISSUE](https://github.com/user-attachments/assets/648d41c3-4812-47fd-9696-38d76a2a0a5a)](https://github.com/nuclearcodecat/shimmer/issues)[![MONEY BUTTON](https://github.com/user-attachments/assets/18d7f816-f784-46b2-97b1-89173f68e227)](https://ko-fi.com/nuclearcodecat)
 
 see the [changelog](CHANGELOG.md) for a history of changes
@@ -44,6 +47,7 @@ thanks for 100 stars :P
  - setting available to move sidebar to the right side
  - config properties for customization
  - compatible with firefox nightly
+ - semi-compatible with native vertical tabs
 
 ## installation
 
@@ -66,14 +70,14 @@ thanks for 100 stars :P
 
 ## updating
  i am expecting to make frequent chagnes to this project. check this github page once in a while and check if a new version is available. your installation's version is visible next to the close button of the new tab settings menu (top right on new tab).
- ### how to update:
-  follow the installation instructions, allow your file explorer to replace files if asked (remember to update sidebery styles)
+### how to update:
+ follow the installation instructions, allow your file  explorer to replace files if asked (remember to update  sidebery styles)
 
 ## customization
  at the top of `userChrome.css`, there are customizable css variables. among them are tab sizing options, rounding, spacing between certain items etc. below these variable there also exist exclusions from the right click context menu. comment and uncomment whichever options you might want to enable or disable.
  
  i've also implemented some custom `about:config` boolean values for you to modify. the list is small right now but i'm hoping to see some ideas and issues pop up
- - `shimmer.nightly` - toggle true if using firefox nightly (v2.17 up, unused)
+ - `shimmer.native-vertical-tabs` - toggle true if using firefox vertical tabs instead of sidebery. don't toggle true if using *horizontal* tabs, they will disappear
  - `shimmer.show-sidebar-header` - toggle true to show sidebar header
  - `shimmer.show-sidebar-header-close-button` - even if you enable the header, the close button is automatically hidden. toggle this true to make it reappear
  - `shimmer.sidebar-right-side` - toggle true if you use sidebery on the right side. you have to move the sidebar first in firefox using the sidebar header, which has to be reenabled in config
@@ -83,6 +87,7 @@ thanks for 100 stars :P
  - `shimmer.disable-compact-winctr-buttons` - toggle true to revert the compact window control buttons to default
  - `shimmer.dont-expand-selected-tab` - toggle true to disable the effect of expanding the active tab when there are many tabs open
  - `shimmer.shimmer.hide-sidebar-button` - toggle true to hide the "show sidebars" button
+ - `shimmer.nightly` - toggle true if using firefox nightly (v2.17 up, unused)
 
 ## maintaining
  please keep in mind that i won't always have time to fix a problem created by a new version of firefox in a day. if you'd like to create a pull request, feel free to do so. if you find any issues, please report them at the "issues" tab on github.
