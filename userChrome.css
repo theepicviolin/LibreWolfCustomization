@@ -210,17 +210,24 @@
 }
 
 /*TODO possible fix for macos icons not centered (#3) */
-.titlebar-buttonbox-container {
-  justify-content: space-evenly !important;
-  align-items: center !important;
+
+@supports (-moz-osx-font-smoothing: grayscale) {
+
+  .titlebar-buttonbox-container {
+    justify-content: space-evenly !important;
+    align-items: center !important;
+  }
+  .titlebar-buttonbox {
+    height: 100% !important;
+    align-items: center !important;
+  }
+  .titlebar-button {
+    height: 100% !important;
+  }
+
 }
-.titlebar-buttonbox {
-  height: 100% !important;
-  align-items: center !important;
-}
-.titlebar-button {
-  height: 100% !important;
-}
+
+
 
 /*? make the window grabbable at the top, but not the window control buttons */
 /* #main-window[titlepreface="​"] #nav-bar {
@@ -285,8 +292,10 @@
 /*! === menubar === */
 
 /*? hide regular winctr buttons when menubar is open */
+@media (-moz-windows-compositor) {
 #toolbar-menubar:not([inactive]) ~ #TabsToolbar .titlebar-buttonbox-container {
   display: none !important;
+}
 }
 
 #toolbar-menubar:not([inactive]) {
