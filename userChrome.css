@@ -467,8 +467,9 @@ findbar[hidden]{
 findbar:not([hidden]) {
   opacity: 1 !important;
   background: var(--lwt-accent-color) !important;
+  background-color: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
+  -moz-appearance: none !important;
 }
-
 .findbar-container, .findbar-container > hbox {
   height: 100% !important;
 }
