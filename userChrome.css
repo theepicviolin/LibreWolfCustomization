@@ -204,9 +204,11 @@
     grid-area: 3 / 1 / 4 / 2 !important;
   }
 
+  @media (-moz-windows-compositor) {
   #TabsToolbar {
     flex-direction: row-reverse !important;
   }
+}
 }
 
 /*TODO possible fix for macos icons not centered (#3) */
@@ -218,7 +220,7 @@
     align-items: center !important;
   }
   .titlebar-buttonbox {
-    height: 100% !important;
+    /* height: 100% !important; */
     align-items: center !important;
   }
   .titlebar-button {
