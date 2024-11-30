@@ -1,3 +1,8 @@
+# v2.19
+ - fixed an issue where margins and rounded corners wouldn't hide in fullscreen (e.g. youtube video player) (#27)
+ - added a margin to the left of firefox view button
+ - new config property `shimmer.hide-firefox-view-button`, which hides the firefox view button
+
 # v2.18
  - (very delicate 🙄) support for native vertical tabs
  - new config property `shimmer.native-vertical-tabs`, which adds support for native vertical tabs

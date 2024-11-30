@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.17 */
+/*! SHIMMMER v2.19 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -95,7 +95,7 @@
   }
 }
 
-/*! ====== titlebar ====== */
+/*! === titlebar === */
 
 .toolbarbutton-animatable-box>image {
   /*? change reload button animation length */
@@ -270,6 +270,16 @@
   & .toolbarbutton-badge-stack {
     padding: 0 !important;
   } 
+}
+
+#firefox-view-button {
+  margin-left: 8px !important;
+}
+
+@media (-moz-bool-pref: "shimmer.hide-firefox-view-button") {
+  #firefox-view-button {
+    display: none !important;
+  }
 }
 
 /*! === menubar === */
@@ -795,12 +805,12 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-  #tabbrowser-tabbox, #sidebar-main {
+  :root:not([inDOMFullscreen]) #tabbrowser-tabbox, :root:not([inDOMFullscreen]) #sidebar-main {
     margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
   }
 }
 @media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-  #sidebar-box:not([hidden]), #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+  :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]), :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
     margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
   }
 }
@@ -849,14 +859,14 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 
 /*? rounded browser on left edge */
 @media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-  #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+  :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
     border-radius: 0;
     clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
     overflow: hidden !important;
   }
 }
 @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-  #tabbrowser-tabbox {
+  :root:not([inDOMFullscreen]) #tabbrowser-tabbox {
     border-radius: 0;
     clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
     overflow: hidden !important;
@@ -864,12 +874,12 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 /*? rounded sidebar on right edge */
-#sidebar-box {
+:root:not([inDOMFullscreen]) #sidebar-box {
   clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
   overflow: hidden !important;
 }
 @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-  #sidebar-main {
+  :root:not([inDOMFullscreen]) #sidebar-main {
     clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
   }
 }
@@ -877,25 +887,25 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 @media (-moz-bool-pref: "shimmer.sidebar-right-side") {
   /*? rounded browser on right edge */
   @media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-    #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+    :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
       border-radius: 0 !important;
       clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
     }
   }
   @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-    #tabbrowser-tabbox {
+    :root:not([inDOMFullscreen]) #tabbrowser-tabbox {
       border-radius: 0 !important;
       clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
     }
   }
 
   /*? rounded sidebar on left edge */
-  #sidebar-box {
+  :root:not([inDOMFullscreen]) #sidebar-box {
     border-radius: 0 !important;
     clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
   }
   @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-    #sidebar-main {
+    :root:not([inDOMFullscreen]) #sidebar-main {
       clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
     }
   }
