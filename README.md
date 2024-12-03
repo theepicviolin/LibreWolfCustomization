@@ -74,6 +74,7 @@ thanks for 100 stars :P
  at the top of `userChrome.css`, there are customizable css variables. among them are tab sizing options, rounding, spacing between certain items etc. below these variable there also exist exclusions from the right click context menu. comment and uncomment whichever options you might want to enable or disable.
  
  i've also implemented some custom `about:config` boolean values for you to modify. the list is small right now but i'm hoping to see some ideas and issues pop up
+ - `shimmer.disable-popover-urlbar` - toggle true to remove the popover effect on the urlbar
  - `shimmer.native-vertical-tabs` - toggle true if using firefox vertical tabs instead of sidebery. don't toggle true if using *horizontal* tabs, they will disappear
  - `shimmer.show-sidebar-header` - toggle true to show sidebar header
  - `shimmer.show-sidebar-header-close-button` - even if you enable the header, the close button is automatically hidden. toggle this true to make it reappear
