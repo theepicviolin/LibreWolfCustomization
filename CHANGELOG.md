@@ -1,3 +1,6 @@
+# v2.20
+ - new config property `shimmer.disable-popover-urlbar`, which removes the popover effect on the urlbar when toggled true
+
 # v2.19
  - fixed an issue where margins and rounded corners wouldn't hide in fullscreen (e.g. youtube video player) (#27)
  - added a margin to the left of firefox view button

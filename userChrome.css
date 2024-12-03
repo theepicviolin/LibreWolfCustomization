@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.19 */
+/*! SHIMMMER v2.20 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -325,17 +325,19 @@
 }
 
 /*? make the background of extended urlbar move down and BROKEN drop a blur behing */
-#urlbar[breakout-extend] {
-  position: fixed !important;
-  margin-top: 12vh !important;
-  /* margin-left: 8vw !important; */
-  z-index: 9999 !important;
-  transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
-  /* backdrop-filter: blur(8px) !important; */
-  background: rgba(0, 0, 0, 0) !important;
-  /* border-radius: 20px; */
-  left: 10% !important;
-  width: calc(100vw - 20%) !important;
+@media not (-moz-bool-pref: "shimmer.disable-popover-urlbar") {
+  #urlbar[breakout-extend] {
+    position: fixed !important;
+    margin-top: 12vh !important;
+    /* margin-left: 8vw !important; */
+    z-index: 9999 !important;
+    transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+    /* backdrop-filter: blur(8px) !important; */
+    background: rgba(0, 0, 0, 0) !important;
+    /* border-radius: 20px; */
+    left: 10% !important;
+    width: calc(100vw - 20%) !important;
+  }  
 }
 
 #urlbar[breakout-extend] #urlbar-background {
@@ -372,11 +374,6 @@
 /*? centered text when urlbar not in use */
 #urlbar:not(:is([breakout-extend])) #urlbar-input {
   text-align: center !important;
-}
-
-/*? center the text further */
-#urlbar-input {
-  margin-right: 40px !important /* width of identity box */;
 }
 
 /*? hide search one offs */
