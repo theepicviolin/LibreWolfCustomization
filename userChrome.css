@@ -204,23 +204,27 @@
     grid-area: 3 / 1 / 4 / 2 !important;
   }
 
-  #TabsToolbar {
-    flex-direction: row-reverse !important;
+  @supports (not (-moz-osx-font-smoothing: grayscale)) {
+    #TabsToolbar {
+      flex-direction: row-reverse !important;
+    }
   }
 }
 
-/*TODO possible fix for macos icons not centered (#3) */
-.titlebar-buttonbox-container {
-  justify-content: space-evenly !important;
-  align-items: center !important;
+@supports (-moz-osx-font-smoothing: grayscale) {
+  .titlebar-buttonbox-container {
+    justify-content: space-evenly !important;
+    align-items: center !important;
+  }
+  .titlebar-buttonbox {
+    align-items: center !important;
+  }
+  .titlebar-button {
+    height: 100% !important;
+  }
 }
-.titlebar-buttonbox {
-  height: 100% !important;
-  align-items: center !important;
-}
-.titlebar-button {
-  height: 100% !important;
-}
+
+
 
 /*? make the window grabbable at the top, but not the window control buttons */
 /* #main-window[titlepreface="​"] #nav-bar {
@@ -285,8 +289,10 @@
 /*! === menubar === */
 
 /*? hide regular winctr buttons when menubar is open */
-#toolbar-menubar:not([inactive]) ~ #TabsToolbar .titlebar-buttonbox-container {
-  display: none !important;
+@supports (not (-moz-osx-font-smoothing: grayscale)) {
+  #toolbar-menubar:not([inactive]) ~ #TabsToolbar .titlebar-buttonbox-container {
+    display: none !important;
+  }
 }
 
 #toolbar-menubar:not([inactive]) {
@@ -453,8 +459,9 @@ findbar[hidden]{
 findbar:not([hidden]) {
   opacity: 1 !important;
   background: var(--lwt-accent-color) !important;
+  background-color: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
+  -moz-appearance: none !important;
 }
-
 .findbar-container, .findbar-container > hbox {
   height: 100% !important;
 }
