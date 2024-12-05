@@ -119,7 +119,7 @@
 }
 
 .activity-stream .customize-menu .close-button-wrapper::before {
-  content: 'shimmer version 2.20, check for updates at';
+  content: 'shimmer version 2.21, check for updates at';
   display: block;
   position: absolute;
   top: 35%;
