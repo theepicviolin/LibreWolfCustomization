@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.21 */
+/*! SHIMMMER v2.22 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -1012,6 +1012,11 @@ treecol {
 /*? fix for unreadable dropdown text (#34) */
 #ContentSelectDropdown * {
   color: var(--lwt-text-color) !important;
+}
+
+/*? fix for unreadable disabled dropdown text (#35) */
+#ContentSelectDropdownPopup menuitem[disabled] {
+  background: color-mix(in srgb, var(--lwt-accent-color) 60%, var(--lwt-text-color)) !important;
 }
 
 /*! === autoscroller === */

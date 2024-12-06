@@ -1,3 +1,6 @@
+# v2.22
+ - fixed unreadable disabled dropdown menu options (#35)
+
 # v2.21
  - fixed unreadable dropdown menus (#34)
  - fixed macos window control buttons (pr, #33)
