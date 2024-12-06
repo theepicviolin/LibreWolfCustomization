@@ -4,7 +4,7 @@
 # v2.21
  - fixed unreadable dropdown menus (#34)
  - fixed macos window control buttons (pr, #33)
- - fixed unreadable findbar on macos(pr, #33)
+ - fixed unreadable findbar on macos (pr, #33)
 
 # v2.20
  - new config property `shimmer.disable-popover-urlbar`, which removes the popover effect on the urlbar when toggled true
