@@ -12,9 +12,9 @@ thanks for 100 stars :P
 ## demonstration
 
 ### light theme with sidebery, sidebar on left side
-| sidebery, light theme, sidebar on left side                                                       | native tabs, "dark space" theme, shortcuts enabled                                                           |
+| sidebery, light theme, sidebar on left side, bookmarks open                                       | native tabs, "dark space" theme                                                                              |
 |---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| ![lightsidebery](https://github.com/user-attachments/assets/325064a2-4847-4f20-a75d-38268e8c21e1) | ![darkspacenativeshortcuts](https://github.com/user-attachments/assets/82e59bc2-7bd1-409b-9b31-1d872ff77d92) |
+| ![lightsidebery](https://github.com/user-attachments/assets/f4491602-26b4-428b-be58-8495abf0afe7) | ![darknative](https://github.com/user-attachments/assets/2bd135f0-da26-4361-bb4a-0282db81cbdc)               |
 
 
 | menus                                                                                       | popover urlbar                                                                             |
@@ -25,7 +25,7 @@ thanks for 100 stars :P
 ![findbar](https://github.com/user-attachments/assets/da46b9d5-2275-4b47-91be-934ceae368c7)
 
 ### quality of life improvements
-![tab](https://github.com/user-attachments/assets/21849280-e50a-47e1-a958-677e823962a0)
+![longtab](https://github.com/user-attachments/assets/6ab029f9-1b67-4545-a898-bd680bd40000)
 
 ### compact, macos-like window control buttons
 ![winctr](https://github.com/user-attachments/assets/934849bd-19ba-4617-8bfe-f5b41508a872)
