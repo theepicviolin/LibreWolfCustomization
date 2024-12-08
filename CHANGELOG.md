@@ -1,3 +1,7 @@
+# v2.23
+ - added crude support for firefox notifications (e.g. add mail application)
+ - fixed main container visible on newtab when everything inside hidden (#36)
+
 # v2.22
  - fixed unreadable disabled dropdown menu options (#35)
 
