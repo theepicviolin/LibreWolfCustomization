@@ -6,7 +6,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
 ## demonstration
 
 ### light theme with sidebery, sidebar on left side
-| sidebery, light theme, sidebar on left side, bookmarks open                                       | native tabs, "green in the dark" theme                                                                       |
+| sidebery, light theme, sidebar on left side, bookmarks open                                       | native tabs, "green in the night" theme                                                                      |
 |---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
 | ![lightsidebery](https://github.com/user-attachments/assets/dd26f273-438e-42be-b77a-5d0df96b70bf) | ![greennative](https://github.com/user-attachments/assets/a60e6432-c919-4766-8353-609f1296315d)              |
 
