@@ -3,18 +3,12 @@
 
 see the [changelog](CHANGELOG.md) for a history of changes
 
-thanks for 100 stars :P
-
-## important notice
- ![update](https://github.com/user-attachments/assets/ad6f6b3a-2401-4876-8ef9-878b5371440a)
- firefox stable has been updated to version 133. this breaks some of the styles used in shimmer. please update to v2.17 or use `shimmer.nightly` config property to fix the issues.
-
 ## demonstration
 
 ### light theme with sidebery, sidebar on left side
-| sidebery, light theme, sidebar on left side, bookmarks open                                       | native tabs, "dark space" theme                                                                              |
+| sidebery, light theme, sidebar on left side, bookmarks open                                       | native tabs, "green in the dark" theme                                                                       |
 |---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| ![lightsidebery](https://github.com/user-attachments/assets/f4491602-26b4-428b-be58-8495abf0afe7) | ![darknative](https://github.com/user-attachments/assets/2bd135f0-da26-4361-bb4a-0282db81cbdc)               |
+| ![lightsidebery](https://github.com/user-attachments/assets/dd26f273-438e-42be-b77a-5d0df96b70bf) | ![greennative](https://github.com/user-attachments/assets/a60e6432-c919-4766-8353-609f1296315d)              |
 
 
 | menus                                                                                       | popover urlbar                                                                             |
