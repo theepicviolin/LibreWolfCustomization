@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.23 */
+/*! SHIMMMER v2.24 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -311,7 +311,7 @@
 
 /*! === navbar === */
 
-/*? rounded url bar and box */
+/*? rounded urlbar and box */
 #urlbar-background {
   background: var(--toolbar-field-background-color) !important;
   /* background: color-mix(in srgb, var(--toolbar-bgcolor) 90%, rgba(0, 0, 0, 255)) !important; */
@@ -433,7 +433,7 @@ findbar {
   border: 0 !important;
   /*? relative for margins */
   position: relative !important;
-  border-radius: 16px !important;
+  border-radius: 12px !important;
   bottom: 60px !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -446,7 +446,7 @@ findbar {
   border: 0 !important;
   transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
   overflow-x: visible !important;
-  filter: drop-shadow(0px 0px 1px color-mix(in srgb, var(--lwt-text-color) 60%, rgba(0, 0, 0, 0)));
+  box-shadow: 0 0 0px 1px var(--lwt-accent-color) !important;
 }
 
 findbar[hidden]{
@@ -458,8 +458,7 @@ findbar[hidden]{
 
 findbar:not([hidden]) {
   opacity: 1 !important;
-  background: var(--lwt-accent-color) !important;
-  background-color: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
+  background: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
   -moz-appearance: none !important;
   appearance: none !important;
 }
@@ -509,7 +508,7 @@ findbar:not([hidden]) {
 }
 
 .findbar-textbox {
-  border-radius: 11px !important;
+  border-radius: 8px !important;
   font-family: monospace !important;
   padding: 5px 8px !important;
   width: 16em !important;
@@ -521,9 +520,14 @@ findbar:not([hidden]) {
 }
 .findbar-closebutton {
   opacity: 1 !important;
-  background: var(--lwt-accent-color) !important;
+  /* background: var(--lwt-accent-color) !important; */
   /* wasn't square for some reason */
   width: auto !important;
+}
+.findbar-closebutton image {
+  width: 16px;
+  height: 16px;
+  padding: 2px;
 }
 
 /*? move matched amount below main findbar */
@@ -531,12 +535,14 @@ findbar:not([hidden]) {
   position: absolute !important;
   padding: 20px 13px 3px 10px !important;
   top: 14px !important;
-  background: var(--lwt-accent-color) !important;
+  background: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
   /* border: solid var(--arrowpanel-border-color) 1px !important; */
   left: -12px !important;
   border-bottom-left-radius: 12px !important;
   border-bottom-right-radius: 12px !important;
   z-index: 9 !important;
+  box-shadow: 0 0 0px 1px var(--lwt-accent-color);
+  clip-path: inset(0 -10px -5px -5px);
 }
 .findbar-find-status {
   display: none !important;
@@ -550,10 +556,12 @@ findbar:not([hidden]) {
   content: '';
   width: 16px;
   height: 22px;
-  background: var(--lwt-accent-color);
+  background: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
   right: -6px;
   top: 12px;
   transform: rotate(45deg);
+  box-shadow: 0 0 0px 1px var(--lwt-accent-color);
+  clip-path: inset(0 -5px 0 0);
 }
 .findbar-textbox { 
   z-index: 10 !important;
@@ -661,8 +669,9 @@ findbar:not([hidden]) {
 }
 
 /*? round statuspanel */
-#statuspanel, #statuspanel-label {
-  border-radius: 10px !important;
+#statuspanel-label {
+  border-radius: 7px !important;
+  box-shadow: 0 0 0px 1px var(--lwt-accent-color);
 }
 
 /*? border and alternative statuspanel padding */
@@ -673,7 +682,7 @@ findbar:not([hidden]) {
 
 /*? color the statuspanel */
 #statuspanel-label {
-  background: var(--lwt-accent-color) !important;
+  background: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
   color: var(--lwt-text-color) !important;
 }
 

@@ -1,3 +1,7 @@
+# v2.24
+ - updated findbar, statuspanel colors and border radius
+ - enhanced statuspanel and findbar with borders
+
 # v2.23
  - added crude support for firefox notifications (e.g. add mail application)
  - fixed main container visible on newtab when everything inside hidden (#36)
