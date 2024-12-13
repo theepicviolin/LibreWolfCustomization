@@ -16,7 +16,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
 | ![ctxmenu](https://github.com/user-attachments/assets/7da9bdff-d247-4680-ad20-70d12c886272) | ![urlbar](https://github.com/user-attachments/assets/8b328ecf-0297-4e8c-8cb6-8826040c7916) |
 
 ### compact findbar
-![findbar](https://github.com/user-attachments/assets/da46b9d5-2275-4b47-91be-934ceae368c7)
+![findbar](https://github.com/user-attachments/assets/198c5ec8-6e59-46fb-8624-0baa90506c86)
 
 ### quality of life improvements
 ![longtab](https://github.com/user-attachments/assets/6ab029f9-1b67-4545-a898-bd680bd40000)
@@ -39,6 +39,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
  - config properties for customization
  - compatible with firefox nightly
  - semi-compatible with native vertical tabs
+ - floating statuspanel
 
 ## installation
 
