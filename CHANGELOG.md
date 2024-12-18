@@ -1,3 +1,6 @@
+# v2.25
+ - updated styles for popup windows (e.g. apple id login)
+
 # v2.24
  - updated findbar, statuspanel colors and border radius
  - enhanced statuspanel and findbar with borders

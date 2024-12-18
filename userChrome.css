@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.24 */
+/*! SHIMMMER v2.25 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -312,9 +312,15 @@
 /*! === navbar === */
 
 /*? rounded urlbar and box */
-#urlbar-background {
+:root[chromehidden*="menubar toolbar directories extrachrome"] #urlbar-background { 
+  background: rgba(0, 0, 0, 0) !important;
+  border: 0 !important;
+}
+:root:not([chromehidden*="menubar toolbar directories extrachrome"]) #urlbar-background { 
   background: var(--toolbar-field-background-color) !important;
-  /* background: color-mix(in srgb, var(--toolbar-bgcolor) 90%, rgba(0, 0, 0, 255)) !important; */
+  border: 1px solid var(--toolbar-field-border-color) !important;
+}
+#urlbar-background {
   border-radius: var(--shimmer-urlbar-rounding) !important;
   transition: all 0.1s linear !important;
 }
@@ -819,12 +825,12 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-  :root:not([inDOMFullscreen]) #tabbrowser-tabbox, :root:not([inDOMFullscreen]) #sidebar-main {
+  :root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox, :root:not([inDOMFullscreen]) #sidebar-main {
     margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
   }
 }
 @media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-  :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]), :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+  :root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]), :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
     margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
   }
 }
@@ -873,14 +879,14 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 
 /*? rounded browser on left edge */
 @media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-  :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+  :root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
     border-radius: 0;
     clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
     overflow: hidden !important;
   }
 }
 @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-  :root:not([inDOMFullscreen]) #tabbrowser-tabbox {
+  :root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox {
     border-radius: 0;
     clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
     overflow: hidden !important;
@@ -888,12 +894,12 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 /*? rounded sidebar on right edge */
-:root:not([inDOMFullscreen]) #sidebar-box {
+:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box {
   clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
   overflow: hidden !important;
 }
 @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-  :root:not([inDOMFullscreen]) #sidebar-main {
+  :root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-main {
     clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
   }
 }
@@ -901,25 +907,25 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 @media (-moz-bool-pref: "shimmer.sidebar-right-side") {
   /*? rounded browser on right edge */
   @media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-    :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
+    :root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
       border-radius: 0 !important;
       clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
     }
   }
   @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-    :root:not([inDOMFullscreen]) #tabbrowser-tabbox {
+    :root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox {
       border-radius: 0 !important;
       clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
     }
   }
 
   /*? rounded sidebar on left edge */
-  :root:not([inDOMFullscreen]) #sidebar-box {
+  :root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box {
     border-radius: 0 !important;
     clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
   }
   @media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-    :root:not([inDOMFullscreen]) #sidebar-main {
+    :root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-main {
       clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
     }
   }
