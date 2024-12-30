@@ -58,7 +58,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
  - reopen firefox
  - done! :3
  - please please PLEASE visit this github page once in a while to download the latest version, see "updating" section of this readme
- - see "config" section of this readme for customization options
+ - see "customization" section of this readme for customization options
 
 ## updating
  i am expecting to make frequent chagnes to this project. check this github page once in a while and check if a new version is available. your installation's version is visible next to the close button of the new tab settings menu (top right on new tab).
