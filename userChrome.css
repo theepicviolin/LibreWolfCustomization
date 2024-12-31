@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.25 */
+/*! SHIMMMER v2.26 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -777,9 +777,10 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 /*? don't change background behind tabs even when window inactive */
-#navigator-toolbox, #navigator-toolox:-moz-window-inactive {
+/* --lwt-accent-color not defined on linux install */
+/* #navigator-toolbox, #navigator-toolox:-moz-window-inactive {
   background: var(--lwt-accent-color) !important;
-}
+} */
 
 /*? rounded tab close button */
 .tab-close-button {
