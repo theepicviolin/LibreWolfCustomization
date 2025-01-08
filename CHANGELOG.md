@@ -1,3 +1,10 @@
+# v2.26
+ - new config property `shimmer.disable-urlbar-background-transition`, which removes the subtle background transition of the urlbar background while popping over (helps with performance in some cases)
+ - introduced changes to the sidebar splitter for linux support
+ - brought back crude support for themes with pictures
+ - improved general linux support
+ - updated home page for small windows
+
 # v2.25
  - updated styles for popup windows (e.g. apple id login)
 
