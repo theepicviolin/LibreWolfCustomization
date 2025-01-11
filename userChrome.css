@@ -385,7 +385,6 @@
   top: 0 !important;
   left: 0 !important;
   background: color-mix(in srgb, var(--toolbar-field-focus-background-color) 65%, rgba(0, 0, 0, 0)) !important;
-  z-index: 9998 !important;
 }
 
 
