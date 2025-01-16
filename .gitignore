@@ -1,4 +1,5 @@
 *
 !user.js
 !chrome
+!chrome/**
 !my-ublock-dynamic-rules.txt

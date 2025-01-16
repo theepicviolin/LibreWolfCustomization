@@ -4,7 +4,7 @@ Navigation bar on top of the window
 
 
 --- JUST IMPORTANT THINGS ---------------------------------------------------------------------------------------------------------------------------
-
+TEV: Custom edits on lines 241. 242, 270: https://github.com/Naezr/ShyFox/issues/213
 */
 
 /* local variables */
@@ -237,7 +237,9 @@ Navigation bar on top of the window
   
   /* hotfix */
   #urlbar{
-    visibility: collapse;
+    /*visibility: collapse;*/
+    opacity: 0;                     /***** CUSTOM EDIT ******/
+    transition: var(--trans-dur);   /***** CUSTOM EDIT ******/
   }
 
   #urlbar-container::before {
@@ -263,8 +265,9 @@ Navigation bar on top of the window
       
       /* hotfix */
       #urlbar{
-        visibility: visible !important;
-        transition: visibility 0s linear var(--trans-dur);
+        /*visibility: visible !important;
+        transition: visibility 0s linear var(--trans-dur);*/
+        opacity: 100 !important;                        /***** CUSTOM EDIT ******/
         min-width: var(--urlbar-width) !important;
       }
 
