@@ -863,33 +863,13 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 	}
 }
 
-
-/*? native vert tabs space on right edge */
-@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-	#sidebar-main {
-		margin-left: 0 !important;
-		margin-right: var(--splitter-width);
-	}
-}
-@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
-	#sidebar-box:not([hidden]) {
-		margin-left: 0 !important;
-		margin-right: var(--splitter-width) !important;
-	}
-	@media (-moz-bool-pref: "shimmer.sidebar-right-side") {
-		#sidebar-box:not([hidden]) {
-			margin-right: 0 !important;
-			margin-left: var(--splitter-width) !important;
-		}
-	}
-}
-
 #sidebar-splitter {
 	--sidebar-splitter: var(--shimmer-sidebar-splitter-width) !important;
 	width: var(--sidebar-splitter) !important;
 	min-width: var(--sidebar-splitter) !important;
 	background: rgba(0, 0, 0, 0) !important;
 	border: 0 !important;
+	margin-left: 0 !important;
 }
 
 @media not (-moz-bool-pref: "shimmer.show-sidebar-header-close-button") {
