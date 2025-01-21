@@ -1,5 +1,6 @@
 # v2.26
- - new config property `shimmer.disable-urlbar-background-transition`, which removes the subtle background transition of the urlbar background while popping over (helps with performance in some cases)
+ - new config property `shimmer.disable-popover-transition`, which removes the popover transition of the urlbar (might help with performance on older hardware)
+ - new config property `shimmer.disable-urlbar-background-transition`, which removes the subtle background transition of the urlbar background while popping over (might help with performance on older hardware)
  - introduced changes to the sidebar splitter for linux support
  - brought back crude support for themes with pictures
  - improved general linux support

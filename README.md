@@ -69,6 +69,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
  at the top of `userChrome.css`, there are customizable css variables. among them are tab sizing options, rounding, spacing between certain items etc. below these variable there also exist exclusions from the right click context menu. comment and uncomment whichever options you might want to enable or disable.
  
  i've also implemented some custom `about:config` boolean values for you to modify. the list is small right now but i'm hoping to see some ideas and issues pop up
+ - `shimmer.disable-popover-transition` - toggle true to remove the popover transition of the urlbar
  - `shimmer.disable-urlbar-background-transition` - toggle true to remove the subtle transition of the urlbar background which happens during popover animation
  - `shimmer.disable-popover-urlbar` - toggle true to remove the popover effect on the urlbar
  - `shimmer.native-vertical-tabs` - toggle true if using firefox vertical tabs instead of sidebery. don't toggle true if using *horizontal* tabs, they will disappear
