@@ -82,7 +82,6 @@ see the [changelog](CHANGELOG.md) for a history of changes
  - `shimmer.disable-compact-winctr-buttons` - toggle true to revert the compact window control buttons to default
  - `shimmer.dont-expand-selected-tab` - toggle true to disable the effect of expanding the active tab when there are many tabs open
  - `shimmer.shimmer.hide-sidebar-button` - toggle true to hide the "show sidebars" button
- - `shimmer.nightly` - toggle true if using firefox nightly (v2.17 up, unused)
 
 ## maintaining
  please keep in mind that i won't always have time to fix a problem created by a new version of firefox in a day. if you'd like to create a pull request, feel free to do so. if you find any issues, please report them at the "issues" tab on github.

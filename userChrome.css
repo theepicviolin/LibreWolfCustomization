@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.26 */
+/*! SHIMMMER v2.27 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 /*TODO pointer events on urlbar
@@ -397,16 +397,19 @@
 	background: color-mix(in srgb, var(--toolbar-field-focus-background-color) 65%, rgba(0, 0, 0, 0)) !important;
 }
 
+/*? urlbar bigger text */
+#urlbar[breakout-extend] #urlbar-input {
+	font-size: 1.4rem !important;
+}
 
-@media (min-width: 800px) {
-	/*? urlbar bigger text */
+/*? taller urlbar for bigger text when extended */
+#urlbar[breakout-extend] .urlbar-input-container {
+	height: 48px !important;
+}
+
+@media (max-width: 600px) {
 	#urlbar[breakout-extend] #urlbar-input {
-		font-size: 1.5rem !important;
-	}
-
-	/*? taller urlbar for bigger text when extended */
-	#urlbar[breakout-extend] .urlbar-input-container {
-		height: 48px !important;
+		font-size: 1.25rem !important;
 	}
 }
 
@@ -470,12 +473,12 @@ findbar {
 	bottom: 60px !important;
 	margin-left: auto !important;
 	margin-right: auto !important;
-	width: 530px !important;
+	width: 35.75rem !important;
 	height: 3rem !important;
 	display: flex !important;
 	align-items: center !important;
 	/*? fix for relative positioning */
-	margin-top: -36px !important;
+	margin-top: -3rem !important;
 	border: 0 !important;
 	transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 	overflow-x: visible !important;
@@ -544,7 +547,7 @@ findbar:not([hidden]) {
 	border-radius: 8px !important;
 	font-family: monospace !important;
 	padding: 5px 8px !important;
-	width: 16em !important;
+	width: 12rem !important;
 }
 
 .findbar-closebutton:hover {
@@ -566,7 +569,7 @@ findbar:not([hidden]) {
 /*? move matched amount below main findbar */
 .found-matches {
 	position: absolute !important;
-	padding: 20px 13px 3px 10px !important;
+	padding: 1.8rem 0.7rem 0.2rem 0.6rem !important;
 	top: 14px !important;
 	background: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
 	/* border: solid var(--arrowpanel-border-color) 1px !important; */
@@ -587,14 +590,14 @@ findbar:not([hidden]) {
 	position: absolute;
 	display: block;
 	content: '';
-	width: 16px;
-	height: 22px;
+	width: 1rem;
+	height: 1.5rem;
 	background: var(--toolbar-bgcolor, var(--toolbar-non-lwt-bgcolor)) !important;
-	right: -6px;
-	top: 12px;
+	right: -0.5rem;
+	top: 0.8rem;
 	transform: rotate(45deg);
 	box-shadow: 0 0 0px 1px var(--lwt-accent-color);
-	clip-path: inset(0 -5px 0 0);
+	clip-path: inset(0 -0.3rem 0 0);
 }
 .findbar-textbox { 
 	z-index: 10 !important;
@@ -724,6 +727,16 @@ findbar:not([hidden]) {
 }
 
 /*! === tabs === */
+
+@media (-moz-bool-pref: "shimmer.remove-firefox-view-button") {
+	#firefox-view-button {
+		display: none !important;
+	}
+}
+
+#alltabs-button {
+	margin-right: 0.3rem !important;
+}
 
 /*? tab on titlebar that's not pinned */
 #tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab[fadein]:not([pinned]) {
@@ -1127,6 +1140,12 @@ treecol {
 	/* .titlebar-buttonbox-container {
 		margin: 0 var(--shimmer-winctr-margin) 0 0 !important;
 	} */
+}
+
+@media (-moz-bool-pref: "shimmer.remove-winctr-buttons") {
+	.titlebar-buttonbox, .titlebar-spacer[type="post-tabs"] {
+		display: none !important;
+	}
 }
 
 /*! === notif === */

@@ -1,3 +1,9 @@
+# v2.27
+ - slightly changed font size for search bar when focused in small windows
+ - new config property `shimmer.remove-winctr-buttons`, which removes window control buttons
+ - new config property `shimmer.remove-firefox-view-button`, which removes the firefox view button
+ - minor findbar fixes
+
 # v2.26
  - new config property `shimmer.disable-popover-transition`, which removes the popover transition of the urlbar (might help with performance on older hardware)
  - new config property `shimmer.disable-urlbar-background-transition`, which removes the subtle background transition of the urlbar background while popping over (might help with performance on older hardware)
