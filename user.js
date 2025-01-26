@@ -39,3 +39,4 @@ user_pref("browser.download.always_ask_before_handling_new_types", true);
 //user_pref("browser.download.folderList", 2); // set this pref for the download dir to actually be changed from the default
 user_pref("browser.download.dir", "C:\Users\adit9\AppData\Local\Temp");
 user_pref("webgl.disabled", false);
+user_pref("security.ssl.require_safe_negotiation", false); 
