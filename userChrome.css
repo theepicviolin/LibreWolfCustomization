@@ -982,6 +982,27 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 	width: 0px !important;
 } */
 
+/*? minimizing sidebar */
+@media not (-moz-bool-pref: "shimmer.disable-slideover-sidebar") {
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+		position: absolute !important;
+		/*																					navbar height	 */
+		height: calc(100% - var(--shimmer-top-bottom-browser-margin) - 50px) !important;
+		min-width: 0 !important;
+		z-index: 999 !important;
+		transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) {
+		width: 2.85rem !important;
+		transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+	}
+
+	#tabbrowser-tabbox {
+		margin-left: 2.85rem !important;
+	}
+}
+
 /*! === menus === */
 /*? consistent color for ctx menus */
 .menupopup-arrowscrollbox, #searchmode-switcher-popup slot[part="content"] {
