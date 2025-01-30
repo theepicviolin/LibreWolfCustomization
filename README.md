@@ -1,4 +1,4 @@
-# shimmer - charming firefox userchrome with sidebery support (v2.26)
+# shimmer - charming firefox userchrome with sidebery support (v2.27)
 ![STAR BUTTON](https://github.com/user-attachments/assets/227bfd9e-ce3a-4d76-b8b7-24ad55dc128a)[![ISSUE](https://github.com/user-attachments/assets/648d41c3-4812-47fd-9696-38d76a2a0a5a)](https://github.com/nuclearcodecat/shimmer/issues)[![MONEY BUTTON](https://github.com/user-attachments/assets/18d7f816-f784-46b2-97b1-89173f68e227)](https://ko-fi.com/nuclearcodecat)
 
 see the [changelog](CHANGELOG.md) for a history of changes
@@ -29,6 +29,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
 
 
 ## features
+ - collapsing sidebar
  - popover url-bar (see demo animated image)
  - works with custom themes
  - rounded browser/sidebar corners
@@ -42,13 +43,10 @@ see the [changelog](CHANGELOG.md) for a history of changes
  - floating statuspanel
 
 ## installation
-
  - download code from github (green "code" button) and unzip it
  - download sidebery from mozilla addons if wanted
- - open sidebery settings, scroll to the bottom
- - click on "import addon data"
- - select "sidebery.json" from the downloaded archive
- - keep the toggles at default and click "import"
+ - open sidebery settings
+ - find (ctrl + f) "show navigation bar in one line" and toggle on
  - go to about:config
  - toggle `toolkit.legacyUserProfileCustomizations.stylesheets` true
  - toggle `svg.context-properties.content.enabled` true
@@ -61,14 +59,17 @@ see the [changelog](CHANGELOG.md) for a history of changes
  - see "customization" section of this readme for customization options
 
 ## updating
- i am expecting to make frequent chagnes to this project. check this github page once in a while and check if a new version is available. your installation's version is visible next to the close button of the new tab settings menu (top right on new tab).
+ i am expecting to make frequent changes to this project. check this github page once in a while and check if a new version is available. your installation's version is visible next to the close button of the new tab settings menu (top right on new tab).
 ### how to update:
- follow the installation instructions, allow your file  explorer to replace files if asked (remember to update  sidebery styles)
+ follow the installation instructions, allow your file explorer to replace files if asked
 
 ## customization
  at the top of `userChrome.css`, there are customizable css variables. among them are tab sizing options, rounding, spacing between certain items etc. below these variable there also exist exclusions from the right click context menu. comment and uncomment whichever options you might want to enable or disable.
  
- i've also implemented some custom `about:config` boolean values for you to modify. the list is small right now but i'm hoping to see some ideas and issues pop up
+ i've also implemented some custom `about:config` boolean values for you to modify
+ - `shimmer.disable-collapsing-sidebar` - toggle true to disable the collapsing sidebar (broken rn lol)
+ - `shimmer.remove-winctr-buttons` - toggle true to remove window control buttons
+ - `shimmer.remove-firefox-view-button` - toggle true to remove the firefox view button
  - `shimmer.disable-popover-transition` - toggle true to remove the popover transition of the urlbar
  - `shimmer.disable-urlbar-background-transition` - toggle true to remove the subtle transition of the urlbar background which happens during popover animation
  - `shimmer.disable-popover-urlbar` - toggle true to remove the popover effect on the urlbar
@@ -81,7 +82,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
  - `shimmer.shorter-navbar` - toggle true to make the navbar as tall as on unmodified firefox (may require firefox restart)
  - `shimmer.disable-compact-winctr-buttons` - toggle true to revert the compact window control buttons to default
  - `shimmer.dont-expand-selected-tab` - toggle true to disable the effect of expanding the active tab when there are many tabs open
- - `shimmer.shimmer.hide-sidebar-button` - toggle true to hide the "show sidebars" button
+ - `shimmer.hide-sidebar-button` - toggle true to hide the "show sidebars" button
 
 ## maintaining
  please keep in mind that i won't always have time to fix a problem created by a new version of firefox in a day. if you'd like to create a pull request, feel free to do so. if you find any issues, please report them at the "issues" tab on github.
