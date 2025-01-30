@@ -45,8 +45,10 @@ see the [changelog](CHANGELOG.md) for a history of changes
 ## installation
  - download code from github (green "code" button) and unzip it
  - download sidebery from mozilla addons if wanted
- - open sidebery settings
- - find (ctrl + f) "show navigation bar in one line" and toggle on
+ - open sidebery settings, scroll to the bottom (help section)
+ - click on "import addon data"
+ - select "sidebery.json" from the downloaded archive
+ - keep the toggles at default and click "import"
  - go to about:config
  - toggle `toolkit.legacyUserProfileCustomizations.stylesheets` true
  - toggle `svg.context-properties.content.enabled` true
@@ -61,7 +63,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
 ## updating
  i am expecting to make frequent changes to this project. check this github page once in a while and check if a new version is available. your installation's version is visible next to the close button of the new tab settings menu (top right on new tab).
 ### how to update:
- follow the installation instructions, allow your file explorer to replace files if asked
+ follow the installation instructions, allow your file explorer to replace files if asked (remember to update sidebery styles)
 
 ## customization
  at the top of `userChrome.css`, there are customizable css variables. among them are tab sizing options, rounding, spacing between certain items etc. below these variable there also exist exclusions from the right click context menu. comment and uncomment whichever options you might want to enable or disable.

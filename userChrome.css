@@ -991,12 +991,12 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 	}
 
 	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) {
-		width: 44px !important;
+		width: 42px !important;
 		transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
 
 	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([hidden]) ~ #tabbrowser-tabbox {
-		margin-left: 44px !important;
+		margin-left: 42px !important;
 	}
 }
 
@@ -1180,65 +1180,6 @@ treecol {
 	box-shadow: 0px 1px 3px 2px rgba(0,0,0,.15) !important;
 }
 
-
-
-/*! === SIDEBERY STYLES === */
-#sidebar-box[siderbarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
-	#root.root {--general-margin: 6px;}
-	#root.root {--general-border-radius: 8px;}
-
-	#nav_bar {
-		padding: 12px !important;
-	}
-
-	#root.root {--toolbar-bg: transparent;}
-
-	.Tab .body::before, .NavigationBar .nav-item, .Sidebar .tool-btn::before, .TabsPanel .new-tab-btn::before, .CtxMenu .opt::before, .icon-opt::before {
-		transition: background 0.075s linear, opacity 0.075s linear;
-	}
-
-	.hidden-panels-popup-layer > * {
-		background: var(--s-frame-bg) !important;
-	}
-}
-
-/* not working */
-@media not (-moz-bool-pref: "shimmer.disable-collapsing-sidebar") {
-	#sidebar-box[siderbarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
-		#root:not(:hover) .top-horizontal-box, #root:not(:hover) .BottomBar {
-			opacity: 0;
-			transition: all 0s;
-		}
-		#root .top-horizontal-box, #root .BottomBar {
-			transition: opacity 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
-		}
-		#root:not(:hover) .scroll-container {
-			overflow: hidden;
-		}
-		#root:not(:hover) .Tab .close {
-			display: none !important;
-		}
-		#root:not(:hover) .scroll-container > * {
-			width: fit-content;
-		}
-		#root:not(:hover) .Tab {
-			padding-left: 0 !important;
-		}
-		#root:not(:hover) .Tab .t-box {
-			display: none !important;
-		}
-		#root:not(:hover) .new-tab-btns svg {
-			opacity: 0 !important;
-			transition: opacity 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
-		}
-		#root:not(:hover) .new-tab-btns {
-			transition: all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
-		}
-		#root:not(:hover) .top-shadow, #root:not(:hover) .bottom-shadow, #root:not(:hover) .scroll-container .new-tab-btns::before {
-			display: none;
-		}
-	}
-}
 
 /* review:	todo, change, fix */
 /*TODO some of the usual buttons that appear on the right-click context menu are hidden. right now you can change them at the top of `userChrome.css`. i will maybe later introduce `about:config` variables for easier customization */
