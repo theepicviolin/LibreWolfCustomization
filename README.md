@@ -6,6 +6,8 @@ see the [changelog](CHANGELOG.md) for a history of changes
 ## demonstration
 
 ### collapsing sidebar
+![sidebarcollapse](https://github.com/user-attachments/assets/be8cb062-19f6-40b5-b26d-6a4fe8ceff7b)
+
 
 ### light theme with sidebery, sidebar on left side
 | sidebery, light theme, sidebar on left side, bookmarks open                                       | native tabs, "green in the night" theme                                                                      |
