@@ -7,6 +7,10 @@
 
 /*? shimmer variables */
 :root {
+	/*? COLLAPSING SIDEBAR SETTINGS */
+	--shimmer-cbar-collapsed-width: 42px;
+	--shimmer-cbar-expanded-width: 300px;
+
 	/*? urlbar border radius */
 	--shimmer-urlbar-rounding: 16px;
 	--shimmer-urlbar-inner-rounding: calc(var(--shimmer-urlbar-rounding) * .75);
@@ -99,6 +103,11 @@
 }
 
 /*! === titlebar === */
+
+/*? fix theming issues */
+#main-window[titlepreface="​"] #nav-bar {
+	background: rgba(0, 0, 0, 0) !important;
+}
 
 .toolbarbutton-animatable-box>image {
 	/*? change reload button animation length */
@@ -879,7 +888,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 	min-width: var(--sidebar-splitter) !important;
 	background: rgba(0, 0, 0, 0) !important;
 	border: 0 !important;
-	margin-left: 0 !important;
+	margin: 0 !important;
 }
 
 @media not (-moz-bool-pref: "shimmer.show-sidebar-header-close-button") {
@@ -889,7 +898,6 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 #sidebar-close {
-	/* ch */
 	margin-right: 10px !important;
 }
 
@@ -957,46 +965,52 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 	background: var(--lwt-accent-color) !important;
 }
 
-
-/*? animated sidebar-box hidden animation, breaks native tabs because the sidebery titlepreface reappears when #sidebar-box display prop isn't none */
-/* #sidebar-box[hidden] {
-	visibility: hidden !important;
-	min-width: 0 !important;
-	width: 0 !important;
-	transition: width 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
-	opacity: 0 !important;
-}
-#sidebar-box:not([hidden]) {
-	opacity: 1 !important;
-}
-
-#sidebar-splitter:not([state="dragging"]) ~ #tabbrowser-tabbox, #sidebar-splitter:not([state="dragging"]) ~ #sidebar-box, #sidebar-splitter[hidden] ~ #sidebar-box {
-	transition: width 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
-}
-
-#sidebar-splitter[hidden] {
-	display: flex !important;
-	width: 0px !important;
-} */
-
 /*? collapsing sidebar */
 @media not (-moz-bool-pref: "shimmer.disable-collapsing-sidebar") {
-	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
-		position: absolute !important;
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover {
+		/* position: absolute !important; */
 		/*																					navbar height	 */
-		height: calc(100% - var(--shimmer-top-bottom-browser-margin) - 50px) !important;
+		/* height: calc(100% - var(--shimmer-top-bottom-browser-margin) - 50px) !important; */
+		width: var(--shimmer-cbar-expanded-width) !important;
+		transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+	}
+
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
 		min-width: 0 !important;
 		z-index: 999 !important;
-		transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
 
 	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) {
-		width: 42px !important;
-		transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+		width: var(--shimmer-cbar-collapsed-width) !important;
+		transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 	}
 
-	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not([hidden]) ~ #tabbrowser-tabbox {
-		margin-left: 42px !important;
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) ~ #tabbrowser-tabbox {
+		transition: margin 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+	}
+
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] ~ #tabbrowser-tabbox {
+		transition: margin 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+	}
+
+	@media (-moz-bool-pref: "shimmer.sidebar-right-side") {
+		#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] ~ #tabbrowser-tabbox {
+			margin-right: calc(-1 * var(--shimmer-cbar-expanded-width) + var(--shimmer-cbar-collapsed-width)) !important;
+		}
+
+		#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) ~ #tabbrowser-tabbox {
+			margin-right: 0 !important;
+		}
+	}	
+
+	@media not (-moz-bool-pref: "shimmer.sidebar-right-side") {
+		#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] ~ #tabbrowser-tabbox {
+			margin-left: calc(-1 * var(--shimmer-cbar-expanded-width) + var(--shimmer-cbar-collapsed-width)) !important;
+		}
+
+		#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) ~ #tabbrowser-tabbox {
+			margin-left: 0 !important;
+		}
 	}
 }
 

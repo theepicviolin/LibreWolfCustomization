@@ -5,6 +5,8 @@ see the [changelog](CHANGELOG.md) for a history of changes
 
 ## demonstration
 
+### collapsing sidebar
+
 ### light theme with sidebery, sidebar on left side
 | sidebery, light theme, sidebar on left side, bookmarks open                                       | native tabs, "green in the night" theme                                                                      |
 |---------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
@@ -23,10 +25,6 @@ see the [changelog](CHANGELOG.md) for a history of changes
 
 ### compact, macos-like window control buttons
 ![winctr](https://github.com/user-attachments/assets/934849bd-19ba-4617-8bfe-f5b41508a872)
-
-
-
-
 
 ## features
  - collapsing sidebar
@@ -60,6 +58,9 @@ see the [changelog](CHANGELOG.md) for a history of changes
  - please please PLEASE visit this github page once in a while to download the latest version, see "updating" section of this readme
  - see "customization" section of this readme for customization options
 
+## support
+ if you appreciate my work, i'd like to ask you to donate even a dollar, thanks: [ko-fi page](https://ko-fi.com/nuclearcodecat)
+
 ## updating
  i am expecting to make frequent changes to this project. check this github page once in a while and check if a new version is available. your installation's version is visible next to the close button of the new tab settings menu (top right on new tab).
 ### how to update:
@@ -69,7 +70,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
  at the top of `userChrome.css`, there are customizable css variables. among them are tab sizing options, rounding, spacing between certain items etc. below these variable there also exist exclusions from the right click context menu. comment and uncomment whichever options you might want to enable or disable.
  
  i've also implemented some custom `about:config` boolean values for you to modify
- - `shimmer.disable-collapsing-sidebar` - toggle true to disable the collapsing sidebar (broken rn lol)
+ - `shimmer.disable-collapsing-sidebar` - toggle true to disable the collapsing sidebar (unfortunately this also requires commenting out some sidebery styles, they are available in sidebery settings)
  - `shimmer.remove-winctr-buttons` - toggle true to remove window control buttons
  - `shimmer.remove-firefox-view-button` - toggle true to remove the firefox view button
  - `shimmer.disable-popover-transition` - toggle true to remove the popover transition of the urlbar

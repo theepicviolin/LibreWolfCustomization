@@ -1,10 +1,11 @@
 # v2.27
- - new collapsing sidebar feature!!!!!! (please re-read the new installation instructions)
+ - new collapsing sidebar feature!!!!!!
  - new config property `shimmer.disable-collapsing-sidebar`
  - slightly changed font size for search bar when focused in small windows
  - new config property `shimmer.remove-winctr-buttons`, which removes window control buttons
  - new config property `shimmer.remove-firefox-view-button`, which removes the firefox view button
  - minor findbar fixes
+ - fixed sidebar splitter width when using sidebar on right edge
 
 # v2.26
  - new config property `shimmer.disable-popover-transition`, which removes the popover transition of the urlbar (might help with performance on older hardware)
