@@ -62,7 +62,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
  if you appreciate my work, i'd like to ask you to donate even a dollar, thanks: [ko-fi page](https://ko-fi.com/nuclearcodecat)
 
 ## updating
- i am expecting to make frequent changes to this project. check this github page once in a while and check if a new version is available. your installation's version is visible next to the close button of the new tab settings menu (top right on new tab).
+ i am expecting to make frequent changes to this project. check this github page once in a while and check if a new version is available. your installation's version is visible next to the close button of the new tab settings menu (bottom right on new tab).
 ### how to update:
  follow the installation instructions, allow your file explorer to replace files if asked (remember to update sidebery styles)
 
