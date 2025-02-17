@@ -70,7 +70,7 @@ see the [changelog](CHANGELOG.md) for a history of changes
  at the top of `userChrome.css`, there are customizable css variables. among them are tab sizing options, rounding, spacing between certain items etc. below these variable there also exist exclusions from the right click context menu. comment and uncomment whichever options you might want to enable or disable.
  
  i've also implemented some custom `about:config` boolean values for you to modify
- - `shimmer.disable-collapsing-sidebar` - toggle true to disable the collapsing sidebar (unfortunately this also requires commenting out some sidebery styles, they are available in sidebery settings)
+ - `shimmer.disable-collapsing-sidebar` - toggle true to disable the collapsing sidebar (unfortunately this also requires commenting out some sidebery styles, they are marked in the styles editor inside of sidebery settings)
  - `shimmer.remove-winctr-buttons` - toggle true to remove window control buttons
  - `shimmer.remove-firefox-view-button` - toggle true to remove the firefox view button
  - `shimmer.disable-popover-transition` - toggle true to remove the popover transition of the urlbar
