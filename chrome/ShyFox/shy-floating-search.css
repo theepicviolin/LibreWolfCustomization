@@ -39,11 +39,11 @@ Cool floating search panel
       pointer-events: none;
       border-radius: var(--rounding);
 
-      width: 100vw;
-      height: 100vh;
+      width: 200vw; /* 100vw; */
+      height: 200vh; /* 100vh; */
 
-      top: 0px;
-      left: 0px;
+      top: -30vh; /* 0px; */
+      left: -30vw; /* 0px; */
 
       background-color: color-mix(in srgb, var(--bg-col) 80%, transparent);
     }
