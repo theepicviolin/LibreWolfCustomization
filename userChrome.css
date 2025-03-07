@@ -393,13 +393,13 @@
 /*? urlbox backdrop */
 #urlbar[breakout-extend]::before{
 	content: '' !important;
-	width: 100vw !important;
-	height: 150vh !important;
+	width: 200vw !important;
+	height: 200vh !important;
 	position: fixed !important;
 	pointer-events: none !important;
 	overflow: hidden !important;
-	top: -12vh !important;
-	left: -10vw !important;
+	top: -30vh !important;
+	left: -30vw !important;
 	background: color-mix(in srgb, var(--toolbar-field-focus-background-color) 65%, rgba(0, 0, 0, 0)) !important;
 }
 
