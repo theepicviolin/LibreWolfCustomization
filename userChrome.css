@@ -394,12 +394,12 @@
 #urlbar[breakout-extend]::before{
 	content: '' !important;
 	width: 100vw !important;
-	height: 100vh !important;
+	height: 150vh !important;
 	position: fixed !important;
 	pointer-events: none !important;
 	overflow: hidden !important;
-	top: 0 !important;
-	left: 0 !important;
+	top: -12vh !important;
+	left: -10vw !important;
 	background: color-mix(in srgb, var(--toolbar-field-focus-background-color) 65%, rgba(0, 0, 0, 0)) !important;
 }
 
