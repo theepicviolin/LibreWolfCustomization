@@ -1,3 +1,6 @@
+# v2.28
+ - fixed urlbar backdrop positon (#47; pr, #48)
+
 # v2.27
  - new collapsing sidebar feature!!!!!!
  - new config property `shimmer.disable-collapsing-sidebar`
