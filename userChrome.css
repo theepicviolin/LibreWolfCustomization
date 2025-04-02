@@ -96,7 +96,7 @@
 	scrollbar-width: thin !important;
 }
 
-@media (-moz-bool-pref: "shimmer.hide-sidebar-button") {
+@media -moz-pref( "shimmer.hide-sidebar-button") {
 	#sidebar-button {
 		display: none !important;
 	}
@@ -124,7 +124,7 @@
 }
 
 /*? taller navbar */
-@media not (-moz-bool-pref: "shimmer.shorter-navbar") {
+@media not -moz-pref( "shimmer.shorter-navbar") {
 	#navigator-toolbox, #nav-bar {
 		min-height: 50px !important;
 	}
@@ -150,32 +150,32 @@
 #PersonalToolbar:not([collapsed="true"]) {
 	padding-bottom: calc(var(--shimmer-top-bottom-browser-margin) / 2) !important;
 }
-@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+@media -moz-pref( "shimmer.native-vertical-tabs") {
 	#PersonalToolbar {
 		grid-area: 4 / 1 / 5 / 3 !important;
 	}
 }
-@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+@media not -moz-pref( "shimmer.native-vertical-tabs") {
 	#main-window[titlepreface="​"] #PersonalToolbar {
 		grid-area: 4 / 1 / 5 / 3 !important;
 	}
 }
-@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+@media -moz-pref( "shimmer.native-vertical-tabs") {
 	#toolbar-menubar {
 		grid-area: 1 / 1 / 2 / 3 !important;
 	}
 }
-@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+@media not -moz-pref( "shimmer.native-vertical-tabs") {
 	#main-window[titlepreface="​"] #toolbar-menubar {
 		grid-area: 1 / 1 / 2 / 3 !important;
 	}
 }
-@media not (-moz-bool-pref: "shimmer.reverse-winctr-buttons-side") {
+@media not -moz-pref( "shimmer.reverse-winctr-buttons-side") {
 	#navigator-toolbox {
 		grid-template-columns: 1fr auto !important;
 	}
 
-	@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+	@media -moz-pref( "shimmer.native-vertical-tabs") {
 		#nav-bar {
 			grid-area: 3 / 1 / 4 / 2 !important;
 		}
@@ -184,7 +184,7 @@
 		grid-area: 3 / 1 / 4 / 2 !important;
 	}
 
-	@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+	@media -moz-pref( "shimmer.native-vertical-tabs") {
 		#TabsToolbar {
 			grid-area: 3 / 2 / 4 / 3 !important;
 		}
@@ -193,12 +193,12 @@
 		grid-area: 3 / 2 / 4 / 3 !important;
 	}
 }
-@media (-moz-bool-pref: "shimmer.reverse-winctr-buttons-side") {
+@media -moz-pref( "shimmer.reverse-winctr-buttons-side") {
 	#navigator-toolbox {
 		grid-template-columns: auto 1fr !important;
 	}
 
-	@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+	@media -moz-pref( "shimmer.native-vertical-tabs") {
 		#nav-bar {
 			grid-area: 3 / 2 / 4 / 3 !important;
 		}
@@ -207,7 +207,7 @@
 		grid-area: 3 / 2 / 4 / 3 !important;
 	}
 
-	@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+	@media -moz-pref( "shimmer.native-vertical-tabs") {
 		#TabsToolbar {
 			grid-area: 3 / 1 / 4 / 2 !important;
 		}
@@ -247,7 +247,7 @@
 } */
 
 /*? hide native tabs */
-@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+@media -moz-pref( "shimmer.native-vertical-tabs") {
 	#TabsToolbar > .toolbar-items {
 		display: none !important;
 	}
@@ -257,7 +257,7 @@
 }
 
 /*? make navigation buttons white_ when sidebar open */
-@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+@media -moz-pref( "shimmer.native-vertical-tabs") {
 	#navigator-toolbox, #nav-bar {
 		background: var(--toolbar-bgcolor) !important;
 	}
@@ -267,7 +267,7 @@
 }
 
 /*? hide spacers when sidebery open */
-@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+@media -moz-pref( "shimmer.native-vertical-tabs") {
 	#TabsToolbar .titlebar-spacer {
 		display: none;
 	}
@@ -292,7 +292,7 @@
 	margin-left: 8px !important;
 }
 
-@media (-moz-bool-pref: "shimmer.hide-firefox-view-button") {
+@media -moz-pref( "shimmer.hide-firefox-view-button") {
 	#firefox-view-button {
 		display: none !important;
 	}
@@ -315,7 +315,7 @@
 }
 
 /*? hide if sidebery open and stable release */
-@media not (-moz-bool-pref: "shimmer.nightly") {
+@media not -moz-pref( "shimmer.nightly") {
 	#main-window[titlepreface="​"] #titlebar #toolbar-menubar {
 		display: none !important;
 	}
@@ -348,7 +348,7 @@
 }
 
 /*? make the background of extended urlbar move down and BROKEN drop a blur behind */
-@media not (-moz-bool-pref: "shimmer.disable-popover-urlbar") {
+@media not -moz-pref( "shimmer.disable-popover-urlbar") {
 	#urlbar[breakout-extend] {
 		position: fixed !important;
 		margin-top: 12vh !important;
@@ -358,7 +358,7 @@
 	}  
 }
 
-@media not (-moz-bool-pref: "shimmer.disable-popover-transition") {
+@media not -moz-pref( "shimmer.disable-popover-transition") {
 	#urlbar[breakout-extend] {
 		transition: margin-top 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 	}
@@ -374,13 +374,13 @@
 	width: calc(100vw - 20%) !important;
 }
 
-@media not (-moz-bool-pref: "shimmer.disable-urlbar-background-transition") {
+@media not -moz-pref( "shimmer.disable-urlbar-background-transition") {
 	#urlbar[breakout-extend] #urlbar-background {
 		transition: all 0.1s linear !important;
 	}
 }
 
-@media (-moz-bool-pref: "shimmer.disable-urlbar-background-transition") {
+@media -moz-pref( "shimmer.disable-urlbar-background-transition") {
 	#urlbar[breakout-extend] #urlbar-background {
 		transition: none !important;
 	}
@@ -425,14 +425,14 @@
 }
 
 /*? hide search one offs */
-@media not (-moz-bool-pref: "shimmer.show-search-one-offs") {
+@media not -moz-pref( "shimmer.show-search-one-offs") {
 	.search-one-offs {
 		display: none !important;
 	}
 }
 
 /*? fix for floating urlbar */
-@media (-moz-bool-pref: "shimmer.nightly") { 
+@media -moz-pref( "shimmer.nightly") { 
 	#urlbar:not([breakout-extend]) {
 		top: auto !important;
 	}
@@ -734,7 +734,7 @@ findbar:not([hidden]) {
 
 /*! === tabs === */
 
-@media (-moz-bool-pref: "shimmer.remove-firefox-view-button") {
+@media -moz-pref( "shimmer.remove-firefox-view-button") {
 	#firefox-view-button {
 		display: none !important;
 	}
@@ -782,7 +782,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 /*? tab height and x button pos */
 #tabbrowser-tabs[orient="vertical"] .tab-background {min-height: 28px !important;}
 
-@media not (-moz-bool-pref: "shimmer.taller-tabs") {
+@media not -moz-pref( "shimmer.taller-tabs") {
 	#tabbrowser-tabs[orient="horizontal"], .tabbrowser-tab {
 		min-height: 38px !important;
 		height: 38px !important;
@@ -799,7 +799,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 		border-radius: var(--shimmer-tab-border-radius) !important;
 	}
 }
-@media (-moz-bool-pref: "shimmer.taller-tabs") {
+@media -moz-pref( "shimmer.taller-tabs") {
 	#tabbrowser-tabs[orient="horizontal"], .tabbrowser-tab {
 		min-height: 45px !important;
 		height: 45px !important;
@@ -838,7 +838,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 /*? minimal selected tab width */
-@media not (-moz-bool-pref: "shimmer.dont-expand-selected-tab") {
+@media not -moz-pref( "shimmer.dont-expand-selected-tab") {
 	#tabbrowser-tabs[orient="horizontal"] .tabbrowser-tab:not([pinned])[selected] {
 		min-width: var(--shimmer-tab-selected-width) !important;
 	}
@@ -857,7 +857,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 /*! === sidebar === */
 
 /*? hide header, or give good color */
-@media not (-moz-bool-pref: "shimmer.show-sidebar-header") {
+@media not -moz-pref( "shimmer.show-sidebar-header") {
 	#sidebar-header {
 		display: none !important;
 	}
@@ -871,12 +871,12 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 	border-bottom: 0 !important;
 }
 
-@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+@media -moz-pref( "shimmer.native-vertical-tabs") {
 	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox, :root:not([inDOMFullscreen]) #sidebar-main {
 		margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
 	}
 }
-@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+@media not -moz-pref( "shimmer.native-vertical-tabs") {
 	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]), :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
 		margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
 	}
@@ -891,7 +891,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 	margin: 0 !important;
 }
 
-@media not (-moz-bool-pref: "shimmer.show-sidebar-header-close-button") {
+@media not -moz-pref( "shimmer.show-sidebar-header-close-button") {
 	#sidebar-close {
 		display: none !important;
 	}
@@ -907,14 +907,14 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 /*? rounded browser on left edge */
-@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+@media not -moz-pref( "shimmer.native-vertical-tabs") {
 	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
 		border-radius: 0;
 		clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
 		overflow: hidden !important;
 	}
 }
-@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+@media -moz-pref( "shimmer.native-vertical-tabs") {
 	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox {
 		border-radius: 0;
 		clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
@@ -927,21 +927,21 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 	clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
 	overflow: hidden !important;
 }
-@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+@media -moz-pref( "shimmer.native-vertical-tabs") {
 	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-main {
 		clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
 	}
 }
 
-@media (-moz-bool-pref: "shimmer.sidebar-right-side") {
+@media -moz-pref( "shimmer.sidebar-right-side") {
 	/*? rounded browser on right edge */
-	@media not (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+	@media not -moz-pref( "shimmer.native-vertical-tabs") {
 		:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
 			border-radius: 0 !important;
 			clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
 		}
 	}
-	@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+	@media -moz-pref( "shimmer.native-vertical-tabs") {
 		:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox {
 			border-radius: 0 !important;
 			clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
@@ -953,7 +953,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 		border-radius: 0 !important;
 		clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
 	}
-	@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+	@media -moz-pref( "shimmer.native-vertical-tabs") {
 		:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-main {
 			clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
 		}
@@ -966,7 +966,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 }
 
 /*? collapsing sidebar */
-@media not (-moz-bool-pref: "shimmer.disable-collapsing-sidebar") {
+@media not -moz-pref( "shimmer.disable-collapsing-sidebar") {
 	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover {
 		/* position: absolute !important; */
 		/*																					navbar height	 */
@@ -993,7 +993,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 		transition: margin 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 	}
 
-	@media (-moz-bool-pref: "shimmer.sidebar-right-side") {
+	@media -moz-pref( "shimmer.sidebar-right-side") {
 		#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] ~ #tabbrowser-tabbox {
 			margin-right: calc(-1 * var(--shimmer-cbar-expanded-width) + var(--shimmer-cbar-collapsed-width)) !important;
 		}
@@ -1003,7 +1003,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 		}
 	}	
 
-	@media not (-moz-bool-pref: "shimmer.sidebar-right-side") {
+	@media not -moz-pref( "shimmer.sidebar-right-side") {
 		#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] ~ #tabbrowser-tabbox {
 			margin-left: calc(-1 * var(--shimmer-cbar-expanded-width) + var(--shimmer-cbar-collapsed-width)) !important;
 		}
@@ -1105,7 +1105,7 @@ treecol {
 } */
 
 /*! === compact, macos-like winctr buttons === */
-@media not (-moz-bool-pref: "shimmer.disable-compact-winctr-buttons") {
+@media not -moz-pref( "shimmer.disable-compact-winctr-buttons") {
 	#toolbar-menubar .titlebar-buttonbox > toolbarbutton {
 		&:hover > image {
 			padding: 2px 0 !important;
@@ -1159,11 +1159,11 @@ treecol {
 		}
 		padding: 0 var(--shimmer-winctr-gap) !important;
 	}
-	@media not (-moz-bool-pref: "shimmer.reverse-winctr-buttons-side") {
+	@media not -moz-pref( "shimmer.reverse-winctr-buttons-side") {
 		#main-window[titlepreface="​"] #toolbar-menubar:not([inactive]) #PanelUI-menu-button {
 			padding-right: 0 !important;
 		}
-		@media (-moz-bool-pref: "shimmer.native-vertical-tabs") {
+		@media -moz-pref( "shimmer.native-vertical-tabs") {
 			#toolbar-menubar:not([inactive]) #PanelUI-menu-button {
 				padding-right: 0 !important;
 			}
@@ -1174,7 +1174,7 @@ treecol {
 	} */
 }
 
-@media (-moz-bool-pref: "shimmer.remove-winctr-buttons") {
+@media -moz-pref( "shimmer.remove-winctr-buttons") {
 	.titlebar-buttonbox, .titlebar-spacer[type="post-tabs"] {
 		display: none !important;
 	}
