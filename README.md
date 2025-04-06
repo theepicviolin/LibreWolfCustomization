@@ -3,6 +3,8 @@
 
 see the [changelog](CHANGELOG.md) for a history of changes
 
+**a recent firefox update has messed up a lot of my styles. please read the changelog.**
+
 ## demonstration
 
 ### collapsing sidebar
