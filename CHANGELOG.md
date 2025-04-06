@@ -1,3 +1,8 @@
+# v2.29
+  a firefox update regarding a css selector has broken lots of functionality, which have been fixed in pr 52.
+  another change in the structure of html has broken much of the collapsing sidebar, like the detection of sidebery.
+  some things have been fixed, some haven't, for some i just don't know the solution. if anyone would like to contribute, please do so.
+
 # v2.28
  - fixed urlbar backdrop positon (#47; pr, #48)
 
