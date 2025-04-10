@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.29 */
+/*! SHIMMMER v2.30 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -994,7 +994,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 		width: var(--shimmer-cbar-expanded-width) !important;
 	}
 	
-	#tabbrowser-tabbox {
+	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox {
 		margin-left: calc(var(--shimmer-cbar-collapsed-width) + var(--shimmer-sidebar-splitter-width)) !important;;
 	}
 	

@@ -1,3 +1,6 @@
+# v2.30
+ - removed an unwanted margin while firefox was in fullscreen
+
 # v2.29
   a firefox update regarding a css selector has broken lots of functionality, which have been fixed in pr 52.
   another change in the structure of html has broken much of the collapsing sidebar, like the detection of sidebery.
