@@ -13,6 +13,77 @@ Styles for sidebar
   --bookmarks-hgt: var(--toolbar-item-hgt);
 }
 
+
+/***** SETTINGS COPIED FROM SHIMMER https://github.com/nuclearcodecat/shimmer/blob/main/userChrome.css ****/
+:root {
+	/*? COLLAPSING SIDEBAR SETTINGS */
+	--shimmer-cbar-collapsed-width: 42px;
+	--shimmer-cbar-expanded-width: 300px;
+
+	/*? urlbar border radius */
+	--shimmer-urlbar-rounding: 16px;
+	--shimmer-urlbar-inner-rounding: calc(var(--shimmer-urlbar-rounding) * .75);
+
+	/*? max tab width */
+	--shimmer-tab-max-width: 13em;
+	/*? min tab width */
+	--shimmer-tab-min-width: 9em;
+	/*? selected tab width */
+	--shimmer-tab-selected-width: var(--shimmer-tab-max-width);
+
+	/* --shimmer-tab-height: 32px; */
+	/* --shimmer-titlebar-height: calc(var(--shimmer-tab-height) + 6px); */
+	--shimmer-tab-border-radius: 12px;
+	--shimmer-browser-border-radius: 20px;
+	--shimmer-top-bottom-browser-margin: 8px;
+
+	/* could be hardcoded in some places... */
+	--shimmer-btn-anim: background 0.075s linear, opacity 0.075s linear;
+
+	/*? gap between window control buttons */
+	--shimmer-winctr-gap: 5px;
+	/*? margin around winctr buttons */
+	--shimmer-winctr-margin: 12px;
+
+	--shimmer-sidebar-splitter-width: var(--shimmer-top-bottom-browser-margin);
+}
+
+
+/*? collapsing sidebar */
+#main-window:not(:is([titlepreface*="᠎"]))  /*:is([titlepreface*="‌"], [titlepreface*="‍"]))[chromehidden=""]:not([inDOMFullscreen="true"]){*/
+  {
+	#sidebar-wrapper, #sidebar-box {
+		min-width: 0 !important;
+	}
+	
+	#sidebar-wrapper {
+		display: flex !important;
+		z-index: 999 !important;
+		position: absolute !important;
+		left: 0 !important;
+		/*top: 0 !important;
+		/*height: 100% !important;*/
+		transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+    
+	}
+	
+	#sidebar-box {
+    width: var(--shimmer-cbar-collapsed-width) !important;
+		transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+	}
+	
+	#sidebar-wrapper:hover, #sidebar-wrapper:hover #sidebar-box {
+		width: var(--shimmer-cbar-expanded-width) !important;
+	}
+	
+	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox {
+		margin-left: calc(var(--shimmer-cbar-collapsed-width) + var(--shimmer-sidebar-splitter-width)) !important;;
+	}
+	
+}
+/***** END SETTINGS COPIED FROM SHIMMER ****/
+
+
 /* remove space reserved for bookmarks toolbar if it hidden */
 #main-window:has(#PersonalToolbar[collapsed="true"]) {
   --little-gap: 0px;
@@ -22,7 +93,8 @@ Styles for sidebar
 /* if sidebar is not hidden or clean mode not enabled, this window is not floating popup and not in fullscreen video */
 #main-window:not(:is([titlepreface*="᠎"], [titlepreface*="‍"]))[chromehidden=""]:not([inDOMFullscreen="true"]){
   /* set left margin to sidebar width */
-  --left-margin: var(--sdbr-wdt) !important;
+  /*--left-margin: var(--sdbr-wdt) !important;*/
+  --left-margin: var(--shimmer-cbar-collapsed-width) !important;  /*** CUSTOM EDIT ***/
 }
 
 /* hide sidebar splitter */
@@ -53,7 +125,7 @@ Styles for sidebar
   padding-top: 0 !important;
   
   & > * {
-    opacity: var(--dyn-opct);
+    /*opacity: var(--dyn-opct);*/
     transition: var(--transition) !important;
   }
 }
@@ -64,6 +136,7 @@ Styles for sidebar
   top: calc(
     var(--margin) / 2 
     + var(--bookmarks-hgt)
+    + 1px
   );
 
   height: calc(

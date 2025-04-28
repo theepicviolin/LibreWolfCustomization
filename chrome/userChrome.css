@@ -13,3 +13,71 @@
 #urlbar-container {
     -moz-window-dragging: drag; /* CUSTOM EDIT */  
 }
+
+
+/*? needed for popup transition to work */
+#urlbar {
+	margin-top: 0 !important;
+}
+
+/*? make the background of extended urlbar move down and BROKEN drop a blur behind */
+@media not -moz-pref("shimmer.disable-popover-urlbar") {
+	#urlbar[breakout-extend] {
+		position: fixed !important;
+		margin-top: 12vh !important;
+		/* backdrop-filter: blur(8px) !important; */
+		background: rgba(0, 0, 0, 0) !important;
+		/* border-radius: 20px; */
+	}  
+}
+
+#urlbar[breakout-extend] {
+	z-index: 9999 !important;
+	left: 20% !important;
+	width: calc(100vw - 40%) !important;
+}
+
+@media not -moz-pref("shimmer.disable-urlbar-background-transition") {
+	#urlbar[breakout-extend] #urlbar-background {
+		transition: all 0.1s linear !important;
+	}
+}
+
+@media -moz-pref("shimmer.disable-urlbar-background-transition") {
+	#urlbar[breakout-extend] #urlbar-background {
+		transition: none !important;
+	}
+}
+
+#urlbar[breakout-extend] #urlbar-background {
+	background: var(--toolbar-field-focus-background-color) !important;
+}
+
+/*? urlbox backdrop */
+#urlbar[breakout-extend]::before{
+	content: '' !important;
+	width: 200vw !important;
+	height: 200vh !important;
+	position: fixed !important;
+	pointer-events: none !important;
+	overflow: hidden !important;
+	top: -30vh !important;
+	left: -30vw !important;
+	background: color-mix(in srgb, var(--toolbar-field-focus-background-color) 65%, rgba(0, 0, 0, 0)) !important;
+}
+
+/*? urlbar bigger text */
+#urlbar[breakout-extend] #urlbar-input {
+	font-size: 1.4rem !important;
+}
+
+/*? taller urlbar for bigger text when extended */
+#urlbar[breakout-extend] .urlbar-input-container {
+	height: 48px !important;
+}
+
+@media (max-width: 600px) {
+	#urlbar[breakout-extend] #urlbar-input {
+		font-size: 1.25rem !important;
+	}
+}
