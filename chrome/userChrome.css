@@ -14,6 +14,7 @@
     -moz-window-dragging: drag; /* CUSTOM EDIT */  
 }
 
+/*** EVERYTHING BELOW HERE IS FROM SHIMMER ***/
 
 /*? needed for popup transition to work */
 #urlbar {
@@ -21,15 +22,13 @@
 }
 
 /*? make the background of extended urlbar move down and BROKEN drop a blur behind */
-@media not -moz-pref("shimmer.disable-popover-urlbar") {
-	#urlbar[breakout-extend] {
-		position: fixed !important;
-		margin-top: 12vh !important;
-		/* backdrop-filter: blur(8px) !important; */
-		background: rgba(0, 0, 0, 0) !important;
-		/* border-radius: 20px; */
-	}  
-}
+#urlbar[breakout-extend] {
+	position: fixed !important;
+	margin-top: 12vh !important;
+	/* backdrop-filter: blur(8px) !important; */
+	background: rgba(0, 0, 0, 0) !important;
+	/* border-radius: 20px; */
+}  
 
 #urlbar[breakout-extend] {
 	z-index: 9999 !important;
@@ -37,16 +36,12 @@
 	width: calc(100vw - 40%) !important;
 }
 
-@media not -moz-pref("shimmer.disable-urlbar-background-transition") {
-	#urlbar[breakout-extend] #urlbar-background {
-		transition: all 0.1s linear !important;
-	}
+#urlbar[breakout-extend] #urlbar-background {
+	transition: all 0.1s linear !important;
 }
 
-@media -moz-pref("shimmer.disable-urlbar-background-transition") {
-	#urlbar[breakout-extend] #urlbar-background {
-		transition: none !important;
-	}
+#urlbar[breakout-extend] #urlbar-background {
+	transition: none !important;
 }
 
 #urlbar[breakout-extend] #urlbar-background {
