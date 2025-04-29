@@ -1,3 +1,6 @@
+# v2.31
+ - firefox rolled back the sidebar changes - i am doing the same :D
+
 # v2.30
  - removed an unwanted margin while firefox was in fullscreen
 

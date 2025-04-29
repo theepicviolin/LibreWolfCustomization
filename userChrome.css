@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.30 */
+/*! SHIMMMER v2.31 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -877,7 +877,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 	}
 }
 @media not -moz-pref("shimmer.native-vertical-tabs") {
-	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]), :root:not([inDOMFullscreen]) #tabbrowser-tabbox {
+	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]), :root:not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
 		margin-bottom: var(--shimmer-top-bottom-browser-margin) !important;
 	}
 }
@@ -908,7 +908,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 
 /*? rounded browser on left edge */
 @media not -moz-pref("shimmer.native-vertical-tabs") {
-	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox {
+	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
 		border-radius: 0;
 		clip-path: inset(0% 0% 0% 0% round var(--shimmer-browser-border-radius) 0 0 var(--shimmer-browser-border-radius));
 		overflow: hidden !important;
@@ -936,7 +936,7 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 @media -moz-pref("shimmer.sidebar-right-side") {
 	/*? rounded browser on right edge */
 	@media not -moz-pref("shimmer.native-vertical-tabs") {
-		:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox {
+		:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #sidebar-box:not([hidden]) ~ #tabbrowser-tabbox {
 			border-radius: 0 !important;
 			clip-path: inset(0% 0% 0% 0% round 0 var(--shimmer-browser-border-radius) var(--shimmer-browser-border-radius) 0);
 		}
@@ -967,39 +967,50 @@ spacer[part="overflow-end-indicator"], spacer[part="overflow-start-indicator"] {
 
 /*? collapsing sidebar */
 @media not -moz-pref("shimmer.disable-collapsing-sidebar") {
-	#sidebar-wrapper, #sidebar-box {
-		min-width: 0 !important;
-	}
-	
-	#sidebar-wrapper {
-		display: flex !important;
-		z-index: 999 !important;
-		position: absolute !important;
-		left: 0 !important;
-		top: 0 !important;
-		height: 100% !important;
-		transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
-	}
-	
-	#sidebar-box {
-    width: var(--shimmer-cbar-collapsed-width) !important;
-		transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
-	}
-	
-	#sidebar-box {
-		height: calc(100% - var(--shimmer-top-bottom-browser-margin)) !important;
-	}
-	
-	#sidebar-wrapper:hover, #sidebar-wrapper:hover #sidebar-box {
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover {
+		/* position: absolute !important; */
+		/*																					navbar height	 */
+		/* height: calc(100% - var(--shimmer-top-bottom-browser-margin) - 50px) !important; */
 		width: var(--shimmer-cbar-expanded-width) !important;
+		transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
 	}
-	
-	:root:not([chromehidden*="menubar toolbar directories extrachrome"]):not([inDOMFullscreen]) #tabbrowser-tabbox {
-		margin-left: calc(var(--shimmer-cbar-collapsed-width) + var(--shimmer-sidebar-splitter-width)) !important;;
+
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+		min-width: 0 !important;
+		z-index: 999 !important;
 	}
-	
-	#sidebar-splitter {
-    display: none !important;
+
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) {
+		width: var(--shimmer-cbar-collapsed-width) !important;
+		transition: width 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+	}
+
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) ~ #tabbrowser-tabbox {
+		transition: margin 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+	}
+
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] ~ #tabbrowser-tabbox {
+		transition: margin 0.25s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+	}
+
+	@media -moz-pref("shimmer.sidebar-right-side") {
+		#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] ~ #tabbrowser-tabbox {
+			margin-right: calc(-1 * var(--shimmer-cbar-expanded-width) + var(--shimmer-cbar-collapsed-width)) !important;
+		}
+
+		#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) ~ #tabbrowser-tabbox {
+			margin-right: 0 !important;
+		}
+	}	
+
+	@media not -moz-pref("shimmer.sidebar-right-side") {
+		#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] ~ #tabbrowser-tabbox {
+			margin-left: calc(-1 * var(--shimmer-cbar-expanded-width) + var(--shimmer-cbar-collapsed-width)) !important;
+		}
+
+		#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(:hover) ~ #tabbrowser-tabbox {
+			margin-left: 0 !important;
+		}
 	}
 }
 
