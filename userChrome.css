@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.31 */
+/*! SHIMMMER v2.32 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -752,6 +752,14 @@ findbar:not([hidden]) {
 	max-width: var(--shimmer-tab-max-width) !important;
 }
 
+/*? tab groups fix :3 */
+#tabbrowser-tabs[orient="horizontal"] tab-group[collapsed] .tabbrowser-tab[fadein]:not([pinned]) {
+	/*? min tab width */
+	min-width: 0 !important;
+	/*? max tab width */
+	max-width: 0 !important;
+}
+
 /*? make tab background round and small */
 .tab-background {
 	min-height: 0 !important;
@@ -1193,6 +1201,13 @@ treecol {
 	margin-right: 2rem !important;
 	box-shadow: 0px 1px 3px 2px rgba(0,0,0,.15) !important;
 }
+
+
+
+/* fullscreen top margin fix try */
+/* :root:is([inFullscreen]):not([inDOMFullscreen]) #navigator-toolbox:not(:focus-within):not(:hover) ~ #browser {
+	padding-top: var(--shimmer-top-bottom-browser-margin);
+} */
 
 
 /* review:	todo, change, fix */

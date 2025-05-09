@@ -1,3 +1,6 @@
+# v2.32
+ - added support for tab groups
+
 # v2.31
  - firefox rolled back the sidebar changes - i am doing the same :D
 
