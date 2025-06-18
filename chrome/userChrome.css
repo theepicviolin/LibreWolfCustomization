@@ -14,6 +14,10 @@
     -moz-window-dragging: drag; /* CUSTOM EDIT */  
 }
 
+#PersonalToolbar { 
+	visibility: collapse !important; /* CUSTOM EDIT */
+}
+
 /*** EVERYTHING BELOW HERE IS FROM SHIMMER ***/
 
 /*? needed for popup transition to work */
