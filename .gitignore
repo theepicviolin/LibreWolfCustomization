@@ -3,3 +3,5 @@
 !chrome
 !chrome/**
 !my-ublock-dynamic-rules.txt
+!extensions
+!extensions/**
