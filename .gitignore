@@ -5,3 +5,6 @@
 !my-ublock-dynamic-rules.txt
 !extensions
 !extensions/**
+!extension-settings.json
+!extension-preferences.json
+!sidebery-settings.json
