@@ -39,3 +39,4 @@ user_pref("browser.download.always_ask_before_handling_new_types", true);
 user_pref("browser.download.dir", "C:Usersadit9AppDataLocalTemp");
 user_pref("webgl.disabled", false);
 user_pref("security.ssl.require_safe_negotiation", false);
+user_pref("identity.fxaccounts.enabled", true);
