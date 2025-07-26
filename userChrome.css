@@ -1,4 +1,4 @@
-/*! SHIMMMER v2.32 */
+/*! SHIMMMER v2.33 */
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
@@ -1125,6 +1125,18 @@ treecol {
 			padding: 4px 0 !important;
 		}
 	}
+
+	/* 2.33 - winctr buttons lost styling fix */
+
+	.titlebar-buttonbox > toolbarbutton::before {
+		display: none !important;
+	}
+
+	.titlebar-buttonbox > toolbarbutton image {
+		display: block !important;
+	}
+
+	/* end */
 
 	.titlebar-buttonbox > toolbarbutton {
 		background: rgba(0, 0, 0, 0) !important;

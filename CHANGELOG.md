@@ -1,3 +1,6 @@
+# v2.33
+ - fixed an issue with styling lost on window control buttons, caused by firefox update 141
+
 # v2.32
  - added support for tab groups
 
