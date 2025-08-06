@@ -2,6 +2,12 @@
 /*? https://github.com/nuclearcodecat/shimmer */
 
 
+#urlbar-container {
+    -moz-window-dragging: drag; /* CUSTOM EDIT - allow dragging from address bar when fullscreen on monitors without GNOME panel */  
+}
+#PersonalToolbar { 
+	visibility: collapse !important; /* CUSTOM EDIT - hide bookmarks bar always */
+}
 
 /* browser toolbox prompt hack - set devtools.debugger.prompt-connection to false */
 

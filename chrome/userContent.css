@@ -1,10 +1,19 @@
-@font-face {
+/* @font-face {
   font-family: 'Super Glue';
   src: url('./assets/fonts/SuperGlue.woff2') format('woff2'),
 	 url('./assets/fonts/SuperGlue.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+} */
+
+/**** TAKEN FROM SHY FOX *****/
+@-moz-document url("about:home"), url("about:newtab") {
+  /* dark wallpaper */
+  :root[lwt-newtab-brighttext] body {background-image: url("./wallpaper.png") !important;}
+
+  /* light wallpaper */                                      /* `wallpaper.png` will be used when `-light` one does not exist */
+  :root:not([lwt-newtab-brighttext]) body {background-image: url("./wallpaper-light.png"), url("./wallpaper.png") !important;}
 }
 
 :root {
@@ -54,17 +63,17 @@
   margin: 0 !important;
   gap: 1.5rem !important;
 }
-.activity-stream .wordmark::after,
+/* .activity-stream .wordmark::after,
 .showPrivate .wordmark::after {
   content: 'firefox';
   font-family: 'super glue';
   color: #fff !important;
-  filter: drop-shadow(0px 0px 1.5px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0px 0px 1.5px rgba(0, 0, 0, 0.15)); */
   /* mix-blend-mode: color-burn !important; */
-  font-size: 4.25rem;
+  /* font-size: 4.25rem;
   letter-spacing: 0.25rem;
-}
-.activity-stream .wordmark::before,
+} */
+/* .activity-stream .wordmark::before,
 .showPrivate .wordmark::before {
   content: '';
   background: url(./assets/icons/ff.svg);
@@ -72,7 +81,7 @@
   width: 100px;
   height: 100px;
   display: block;
-}
+} */
 @media only screen and (max-width: 609px) {
   .activity-stream .outer-wrapper > main,
   .showPrivate {
