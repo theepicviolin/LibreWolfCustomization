@@ -1,2 +1,11 @@
-userchrome.css.old
-/.vscode
+*
+!user.js
+!chrome
+!chrome/**
+!my-ublock-backup.txt
+!extensions
+!extensions/**
+!extension-settings.json
+!extension-preferences.json
+!sidebery-settings.json
+!search.json.mozlz4
