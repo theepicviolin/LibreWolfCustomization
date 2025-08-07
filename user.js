@@ -17,7 +17,9 @@ user_pref("browser.download.dir", "C:Usersadit9AppDataLocalTemp");
 user_pref("webgl.disabled", true);  // disable for webgl, such as for figma
 //user_pref("security.ssl.require_safe_negotiation", false);
 user_pref("security.ssl.require_safe_negotiation", true);  //disable if you see "SSL_ERROR_UNSAFE_NEGOTIATION" error
-user_pref("identity.fxaccounts.enabled", true);
+user_pref("identity.fxaccounts.enabled", true);  //enable firefox sync
+user_pref("browser.search.separatePrivateDefault", false);
+user_pref("extensions.autoDisableScopes", 0);  // autoenable extensions
 
 user_pref("browser.urlbar.suggest.calculator", true);
 user_pref("browser.urlbar.unitConversion.enabled", true);
